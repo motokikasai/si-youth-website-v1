@@ -156,7 +156,7 @@ a:hover{text-decoration:underline}
 .btn-ghost:hover{background:rgba(255,255,255,.16)}
 .btn-green{background:var(--green);color:#fff}
 .btn-green:hover{background:var(--green-deep)}
-.signup-btn {justify-content:center;width: 100%;}
+.signup-btn {justify-content:center;width: 100%;text-align:center;}
 .hero-note{
   position:absolute;right:18px;bottom:16px;z-index:3;
   font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.45);
