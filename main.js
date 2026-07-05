@@ -4,25 +4,25 @@
  * Pin x/y are % of the map image — tune freely. */
 const PROJECTS = {
   mideast: {
-    x: 17.5, y: 57.1, color: "#d99a33", region: "Middle East",
+    x: 17.5, y: 54.3, color: "#d99a33", region: "Middle East",
     title: "The Oasis Plan",
     text: "LaRouche's fifty-year development plan for Palestine and Israel: nuclear-powered desalination, new water, transport and power infrastructure — peace built on physical development.",
     media: { type: "video", id: "VNoinK0TY7c", thumb: "assets/yt-thumb-oasis.jpg" }
   },
   africa: {
-    x: 12.6, y: 67.4, color: "#2c8b8b", region: "Africa",
+    x: 14.5, y: 65, color: "#2c8b8b", region: "Africa",
     title: "Transaqua",
     text: "Water transfer from the Congo River basin to refill Lake Chad — a 2,400 km navigable canal benefiting some 40 million people across 12 nations, with hydropower, irrigation, and inland navigation.",
     media: { type: "video", id: "VNoinK0TY7c", thumb: "assets/yt-thumb-oasis.jpg" } // demo ID
   },
   samerica: {
-    x: 85.0, y: 69.3, color: "#c05b3f", region: "South America",
+    x: 85.4, y: 65.2, color: "#c05b3f", region: "South America",
     title: "Chancay Port & Bioceanic Corridor",
     text: "The deepest-water port in South America joined to a Pacific–Atlantic rail corridor across Peru and Brazil — 8,000+ direct jobs and a gateway connecting the continent to the World Land-Bridge. (Draft selection — final featured project pending.)",
     media: { type: "video", id: "VNoinK0TY7c", thumb: "assets/yt-thumb-oasis.jpg" } // demo ID
   },
   bronx: {
-    x: 81.9, y: 53.2, color: "#2e6b4f", region: "The Bronx · New York",
+    x: 85.2, y: 43.8, color: "#2e6b4f", region: "The Bronx · New York",
     title: "Development Begins at Home",
     text: "The youth movement's local organizing hub — the featured Bronx development project will be announced. This marker links the neighborhood to the world.",
     media: { type: "video", id: "VNoinK0TY7c", thumb: "assets/yt-thumb-oasis.jpg" } // demo ID
