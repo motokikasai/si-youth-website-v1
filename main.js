@@ -46,6 +46,7 @@ Object.entries(PROJECTS).forEach(([key, p], i) => {
 
 /* ---------- modal ---------- */
 const overlay = document.getElementById("modalOverlay");
+const modalBox = document.getElementById("modalBox");
 let lastFocus = null, currentKey = null;
 function openModal(key){
   const p = PROJECTS[key];
@@ -66,6 +67,7 @@ function openModal(key){
 }
 function closeModal(){
   overlay.classList.remove("open");
+  modalBox.classList.remove("modal--video");
   document.body.style.overflow = "";
   document.getElementById("modalMedia").innerHTML = ""; // stop videos
   if(lastFocus) lastFocus.focus();
@@ -75,10 +77,32 @@ overlay.addEventListener("click", e => { if(e.target === overlay) closeModal(); 
 document.addEventListener("keydown", e => { if(e.key === "Escape" && overlay.classList.contains("open")) closeModal(); });
 document.getElementById("modalGo").addEventListener("click", () => {
   const key = currentKey;
+  if(!key) return;
   closeModal();
   activateTab(key);
   document.getElementById("tabs").scrollIntoView({behavior:"smooth", block:"start"});
 });
+
+/* ---------- signup: conference-highlights video modal ----------
+   Video-only variant of the project modal; same two-click GDPR flow — opening the
+   modal shows the local thumbnail facade, nothing loads from Google until the
+   facade itself is clicked. */
+const HIGHLIGHTS = {
+  id: "40gKXu-rpm0",
+  title: "International Online Youth Conference — Young People of the World, Unite!",
+  thumb: "assets/yt-thumb-youth.jpg"
+};
+function openVideoModal(v){
+  currentKey = null;
+  lastFocus = document.activeElement;
+  document.getElementById("modalTitle").textContent = v.title; // feeds aria-labelledby while the body stays hidden
+  document.getElementById("modalMedia").innerHTML = ytFacadeHTML(v.id, v.title, v.thumb);
+  modalBox.classList.add("modal--video");
+  overlay.classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("modalClose").focus();
+}
+document.querySelectorAll(".js-highlights").forEach(el => el.addEventListener("click", () => openVideoModal(HIGHLIGHTS)));
 
 /* ---------- tabs ---------- */
 const tabBtns = document.querySelectorAll(".tab-btn");
