@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"/mnt/c/Users/kmomo/Downloads/Digital Pamphlet Contents.pdf\" pamphlet.pdf)",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}

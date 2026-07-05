@@ -1,0 +1,24 @@
+# Security & caching headers — Netlify / Cloudflare Pages format.
+# (On Apache use .htaccess `Header set ...`, on Nginx `add_header ...` equivalents.)
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; frame-src https://www.youtube-nocookie.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests
+
+# HTML/CSS/JS are not content-hashed — revalidate so updates reach visitors
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/styles.css
+  Cache-Control: public, max-age=0, must-revalidate
+/main.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# fonts never change
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# images may be swapped as placeholder content arrives — cache one week
+/assets/*
+  Cache-Control: public, max-age=604800

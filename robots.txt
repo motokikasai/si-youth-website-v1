@@ -1,0 +1,5 @@
+# Replace PLACEHOLDER-DOMAIN.example with the real domain before launch
+User-agent: *
+Allow: /
+
+Sitemap: https://PLACEHOLDER-DOMAIN.example/sitemap.xml

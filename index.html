@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schiller Institute International Youth Movement — Transform the World with the Power of Ideas</title>
+<meta name="description" content="Join the Schiller Institute International Youth Movement. Transform the world with the power of ideas.">
+
+<!-- ═══ DOMAIN PLACEHOLDER: replace every occurrence of PLACEHOLDER-DOMAIN.example
+     (also in robots.txt, sitemap.xml, privacy.html, impressum.html) with the real domain ═══ -->
+<link rel="canonical" href="https://PLACEHOLDER-DOMAIN.example/">
+<meta name="theme-color" content="#0f2a1e">
+
+<!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Schiller Institute International Youth Movement">
+<meta property="og:title" content="Transform the World with the Power of Ideas">
+<meta property="og:description" content="Young people of the world, unite! Join the Schiller Institute International Youth Movement — peace through development and the creative powers of the human mind.">
+<meta property="og:url" content="https://PLACEHOLDER-DOMAIN.example/">
+<meta property="og:image" content="https://PLACEHOLDER-DOMAIN.example/assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Earth at night seen from space, city lights tracing development corridors across the continents">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Schiller Institute International Youth Movement">
+<meta name="twitter:description" content="Transform the world with the power of ideas — join the international youth movement.">
+<meta name="twitter:image" content="https://PLACEHOLDER-DOMAIN.example/assets/og-card.jpg">
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+<!-- Performance -->
+<link rel="preload" as="image" href="assets/hero-earth.jpg" fetchpriority="high">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Schiller Institute International Youth Movement",
+  "url": "https://PLACEHOLDER-DOMAIN.example/",
+  "logo": "https://PLACEHOLDER-DOMAIN.example/assets/si-logo-light.png",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "The Schiller Institute",
+    "url": "https://schillerinstitute.com/"
+  }
+}
+</script>
+<!--
+  ============================================================
+  DRAFT — Schiller Institute Youth Movement single-page site
+  ------------------------------------------------------------
+  VIEWING: run ./serve.sh and open http://localhost:8080 — YouTube
+  embeds show "Error 153" if the page is opened directly as a file://
+  (YouTube requires an HTTP referrer since 2025).
+
+  ASSET SWAP GUIDE
+  • Hero video: when the final looping animation is ready, put it at
+    assets/hero-landbridge.mp4 — the <video> tag in the .hero section
+    below is already wired up; just uncomment it. The animated still
+    (assets/hero-earth.jpg) automatically remains the poster/fallback.
+  • All placeholders are marked with class "ph" and carry a
+    data-note describing the expected content + aspect ratio.
+  ============================================================
+-->
+<!-- fonts are self-hosted (assets/fonts/) — no Google CDN, no cross-origin requests -->
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" aria-label="Main">
+  <a class="nav-logo" href="#top" aria-label="Schiller Institute — back to top">
+    <img class="logo-light" src="assets/si-logo-light.png" alt="Schiller Institute" width="558" height="115">
+    <img class="logo-dark" src="assets/si-logo-dark.png" alt="Schiller Institute" width="574" height="137">
+  </a>
+  <button class="nav-burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="#call">Call to Action</a>
+    <a href="#larouche">Lyndon LaRouche</a>
+    <a href="#helga">Helga LaRouche</a>
+    <a href="#landbridge">World Land-Bridge</a>
+    <a href="#voices">Meet the Global South</a>
+    <a href="#signup" class="nav-cta">Sign Up</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-media" aria-hidden="true">
+    <!--
+      FINAL VIDEO SLOT — when the looping land-bridge animation is finished,
+      uncomment this tag (drop the file at assets/hero-landbridge.mp4) and the
+      animated still below it becomes the poster/fallback automatically.
+
+    <video autoplay muted loop playsinline poster="assets/hero-earth.jpg">
+      <source src="assets/hero-landbridge.mp4" type="video/mp4">
+    </video>
+    -->
+    <img src="assets/hero-earth.jpg" alt="" width="2048" height="1150" fetchpriority="high" decoding="async">
+  </div>
+  <div class="hero-stars" id="stars" aria-hidden="true"></div>
+  <div class="hero-aurora" aria-hidden="true"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">Schiller Institute</span>
+    <h1 id="heroTitle">International Youth Movement: Transform the World with the <em>Power of Ideas</em></h1>
+    <p class="hero-sub">A worldwide movement of young people building the next paradigm of civilization — peace through development, and the creative powers of the human mind.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#signup">Join the Movement</a>
+      <a class="btn btn-ghost" href="#call">Read the Call ↓</a>
+    </div>
+  </div>
+
+  <span class="hero-note">⬡ placeholder — final looping land-bridge animation in production</span>
+  <a class="scroll-cue" href="#call" aria-label="Scroll to content">▾</a>
+</header>
+
+<!-- ============ A. CALL TO ACTION ============ -->
+<section id="call" class="sec dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">A</span> Call to Action</span>
+      <h2>Young People of the World — This Is Your Moment</h2>
+    </div>
+    <div class="call-grid">
+      <div class="reveal">
+        <blockquote class="call-quote">
+          <span class="tbd" title="Placeholder — awaiting the final Call to Action text">History is not something that happens to you — it is something you make. We call on the youth of every continent to lift their eyes above the crises of the day, and to join us in building a world of sovereign nations, shared development, and the unstoppable power of human creativity.</span>
+        </blockquote>
+        <div class="call-byline">
+          <span class="avatar" aria-hidden="true">✦</span>
+          <span class="who">
+            Helga Zepp-LaRouche <em>or</em> Hon. Dr. Naledi Pandor
+            <small>⬡ placeholder — final signed text to be supplied</small>
+          </span>
+        </div>
+      </div>
+      <div class="call-side">
+        <div class="call-stat reveal" data-delay="1"><b>6 continents</b><span>where the youth movement is organizing today</span></div>
+        <div class="call-stat reveal" data-delay="2"><b>1 humanity</b><span>united by the power of ideas, not divided by geopolitics</span></div>
+        <div class="call-stat reveal" data-delay="3">
+          <a class="btn btn-gold" href="#signup" style="align-self:flex-start">Answer the Call →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ B. FROM LYNDON LAROUCHE ============ -->
+<section id="larouche" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">B</span> From Lyndon LaRouche</span>
+      <h2>Viewing Africa’s Current Crisis from the Vantage Point of Universal History</h2>
+      <p class="sec-lede">Excerpted from the speech delivered by Lyndon H. LaRouche, Jr. on April 26, 1997, to the Schiller Institute conference “Peace Through Development in Africa’s Great Lakes Region,” Walluf, Germany. First published in <em>EIR</em>, Vol. 24, No. 22, May 23, 1997.</p>
+    </div>
+
+    <div class="narrow">
+      <figure class="art-fig reveal">
+        <img src="assets/larouche-walluf-1997.jpg" width="756" height="494" loading="lazy" decoding="async" alt="Lyndon LaRouche addressing a room of African diplomats and guests at the Schiller Institute conference in Walluf, Germany, 1997">
+        <figcaption>Lyndon LaRouche addresses African diplomats and guests at the Schiller Institute conference “Peace Through Development in Africa’s Great Lakes Region,” Walluf, Germany, April 26, 1997. <em>EIRNS/Christopher Lewis</em></figcaption>
+      </figure>
+
+      <div class="article">
+        <p class="reveal"><span class="dropcap">A</span>lthough I am interested in many of these subjects, and involved in many of the topics which will be discussed today, I thought it more appropriate that I address the one topic which no one else would address, which is the situation in the world, which defines the situation in Africa.</p>
+
+        <p class="reveal">Now, I ask you to step out of being Africans for a moment, and go up to the top of a mountain, where you can see in the distance both the breadth of this planet’s population, and also, see into its past, several hundred years. And, look at the situation that we’re in; look down on this planet on which you happen to live, but stay on the mountaintop for a while, and say, What is going on, around the whole world?</p>
+
+        <figure class="art-fig reveal">
+          <div class="ph ar-21x9">
+            <span class="ph-ar">21:9</span>
+            <span class="ph-ico">🖼</span>
+            <span class="ph-label">Image placeholder</span>
+            <span class="ph-note">Wide archival image — e.g. conference panorama or Great Lakes region development map</span>
+          </div>
+          <figcaption>Caption placeholder — credit line to follow.</figcaption>
+        </figure>
+
+        <p class="reveal">Let’s look at Africa, and its development, and its pain of today, in terms of what is happening around the world. And what you see is, this planetary civilization is <em>disintegrating!</em></p>
+
+        <p class="reveal">We’re on the verge, in the process actually, of the greatest financial collapse, globally, in all human history. We’re at the point that the monetary systems of every country, with possibly the exception of China, can disintegrate on a given morning. That is, we could have a chain reaction in financial speculation, which, within 48 to 72 hours, can annihilate every currency, every bank on this planet, simply because everything freezes; money is no longer negotiable, because of the collapse. That can happen.</p>
+      </div>
+
+      <div class="art-cols reveal">
+        <figure class="art-fig">
+          <img src="assets/fdr-liberia-1943.jpg" width="737" height="500" loading="lazy" decoding="async" alt="Franklin D. Roosevelt reviewing troops in Liberia, 1943">
+          <figcaption>President Franklin Roosevelt in Liberia, 1943 — from the same <em>EIR</em> article.</figcaption>
+        </figure>
+        <figure class="art-fig">
+          <img src="assets/binaisa-godfrey.jpg" width="756" height="422" loading="lazy" decoding="async" alt="Godfrey Binaisa, former President of Uganda">
+          <figcaption>Godfrey Binaisa, former President of Uganda — from the same <em>EIR</em> article.</figcaption>
+        </figure>
+      </div>
+
+      <div class="read-more reveal">
+        <span><b>Continue reading —</b> the full speech traces mankind’s nature as a creature of ideas, and Africa’s place in universal history.</span>
+        <a class="btn btn-green" href="https://larouchepub.com/lar/2026/5322-viewing_africa_s_current_crisi-lar.html" target="_blank" rel="noopener">Read the Full Speech ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ C. FROM HELGA LAROUCHE ============ -->
+<section id="helga" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">C</span> From Helga LaRouche</span>
+      <h2>Ten Principles of a New International Security &amp; Development Architecture</h2>
+      <p class="sec-lede">Proposed by Schiller Institute founder Helga Zepp-LaRouche, November 30, 2022. Click each principle to read it.</p>
+    </div>
+
+    <div class="helga-grid">
+      <div class="helga-portrait reveal">
+        <div class="helga-card">
+          <div class="ph ar-3x4">
+            <span class="ph-ar">3:4</span>
+            <span class="ph-ico">👤</span>
+            <span class="ph-label">Portrait of Helga Zepp-LaRouche</span>
+            <span class="ph-note">Portrait photo placeholder — replace with approved image</span>
+          </div>
+          <div class="meta">
+            <b>Helga Zepp-LaRouche</b>
+            <span>Founder, The Schiller Institute</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="principles reveal">
+        <details class="principle" open>
+          <summary>Sovereign nation-states, peaceful coexistence <span class="chev">▾</span></summary>
+          <div class="body">The new International Security and Development Architecture must be a partnership of perfectly sovereign nation-states, based on the Five Principles of Peaceful Coexistence and the UN Charter.</div>
+        </details>
+        <details class="principle">
+          <summary>Alleviate poverty in every nation <span class="chev">▾</span></summary>
+          <div class="body">The absolute priority must be to alleviate poverty in every nation on the planet — easily possible, if the existing technologies are used for the benefit of the common good.</div>
+        </details>
+        <details class="principle">
+          <summary>Modern health systems for every country <span class="chev">▾</span></summary>
+          <div class="body">The life expectancy of all people living must be prolonged to the fullest potential by creating modern health systems in every country on the planet.</div>
+        </details>
+        <details class="principle">
+          <summary>Universal education for every child and adult <span class="chev">▾</span></summary>
+          <div class="body">One of the main aims of the new architecture must be providing access to universal education for every child and every adult — developing the creative potential of all.</div>
+        </details>
+        <details class="principle">
+          <summary>A financial system serving humanity <span class="chev">▾</span></summary>
+          <div class="body">The international financial system must be reorganized, so that it can provide productive credits to accomplish these aims.</div>
+        </details>
+        <details class="principle">
+          <summary>A World Land-Bridge connecting all continents <span class="chev">▾</span></summary>
+          <div class="body">The new economic order must focus on creating the conditions for modern industries and agriculture, starting with the infrastructural development of all continents — eventually connected by tunnels and bridges to become a <em>World Land-Bridge</em>.</div>
+        </details>
+        <details class="principle">
+          <summary>End geopolitics — no division into blocs <span class="chev">▾</span></summary>
+          <div class="body">The new global security architecture must eliminate the concept of geopolitics by ending the division of the world into blocs.</div>
+        </details>
+        <details class="principle">
+          <summary>One humanity, in one boat <span class="chev">▾</span></summary>
+          <div class="body">For the first time — because of nuclear weapons, pandemics, the internet, and other global effects — mankind is sitting in one boat. Our challenges can only be solved together.</div>
+        </details>
+        <details class="principle">
+          <summary>In cohesion with the physical universe <span class="chev">▾</span></summary>
+          <div class="body">The economic, social and political order has to be brought into cohesion with the lawfulness of the physical universe.</div>
+        </details>
+        <details class="principle">
+          <summary>Man is fundamentally good <span class="chev">▾</span></summary>
+          <div class="body">Man is fundamentally good, and capable of infinitely perfecting the creativity of his mind and the beauty of his soul — the most advanced geological force in the universe.</div>
+        </details>
+        <p style="font-size:12.5px;color:var(--ink-soft);margin-top:14px">
+          Full text: <a href="https://schillerinstitute.com/blog/2022/11/30/ten-principles-of-a-new-international-security-and-development-architecture/" target="_blank" rel="noopener">Ten Principles — schillerinstitute.com ↗</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ D. WORLD LAND-BRIDGE ============ -->
+<section id="landbridge" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">D</span> World Land-Bridge</span>
+      <h2>One Planet, Connected by Development</h2>
+      <p class="sec-lede">Conceived by Lyndon and Helga LaRouche in the early 1990s as a global policy of “Peace Through Development” — corridors of rail, water, and power uniting every continent. <b>Click a pulsing marker</b> to explore a featured project.</p>
+    </div>
+
+    <div class="map-frame reveal" id="mapFrame">
+      <img src="assets/landbridge-map.jpg" width="1170" height="774" loading="lazy" decoding="async" alt="Map of the World Land-Bridge showing proposed development corridors across all continents, including the Oasis Plan, Transaqua, the Bering Strait tunnel, China's BRI, NAWAPA, Chancay Port and the Bioceanic Corridor">
+      <!-- pins injected by JS -->
+      <span class="map-hint"><span class="dot"></span> Click a marker to explore a project</span>
+    </div>
+    <p class="map-src">Map (tentative): <a href="https://gsmn.co.za/wp-content/uploads/2025/08/land-bridge_centerfold_asaka.jpg" target="_blank" rel="noopener">“The World Land-Bridge” centerfold</a> — pin positions are draft.</p>
+
+    <!-- region tabs -->
+    <div class="tabs" role="tablist" aria-label="Land-Bridge regions" id="tabs">
+      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="mideast" style="--sw:#d99a33"><span class="sw"></span>Middle East</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="africa" style="--sw:#2c8b8b"><span class="sw"></span>Africa</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="samerica" style="--sw:#c05b3f"><span class="sw"></span>S.&nbsp;America</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="bronx" style="--sw:#2e6b4f"><span class="sw"></span>The&nbsp;Bronx</button>
+    </div>
+
+    <!-- Middle East -->
+    <div class="panel active" id="panel-mideast" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">Featured project · Middle East</p>
+          <h3>The Oasis Plan</h3>
+          <p>A fifty-year development perspective for Palestine and Israel, first proposed by Lyndon LaRouche in 1975: peace built not on paper treaties, but on the physical economy — <b>water, power, and transport</b> for all the peoples of the region.</p>
+          <ul class="facts">
+            <li>Nuclear-powered desalination to create abundant fresh water where geopolitics now fights over scarcity</li>
+            <li>New canals, rail corridors, and development cities linking the region into the World Land-Bridge</li>
+            <li>Development as the true basis for a durable peace</li>
+          </ul>
+          <div class="doc-link">
+            <span class="ico">📄</span>
+            <span>Contents &amp; maps for this section are drawn from the source document:
+              <a href="https://drive.google.com/file/d/1D4XW7X-kvOcxmigJcQqWTCKZwAojs8Wi/view?usp=sharing" target="_blank" rel="noopener">Oasis Plan document (Google Drive) ↗</a>
+              <em style="opacity:.7"> — ⬡ full contents &amp; map to be integrated</em>
+            </span>
+          </div>
+        </div>
+        <div class="proj-media">
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="The Oasis Plan — Schiller Institute video" role="button" tabindex="0" aria-label="Play: The Oasis Plan. Loads the video from YouTube.">
+            <img src="assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ Click to play — video loads from YouTube (Google). <a href="privacy.html">Privacy</a></span>
+          </div>
+          <div class="ph ar-4x3">
+            <span class="ph-ar">4:3</span>
+            <span class="ph-ico">🗺</span>
+            <span class="ph-label">Oasis Plan regional map</span>
+            <span class="ph-note">Map from the source document — to be extracted and placed here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Africa -->
+    <div class="panel" id="panel-africa" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">Featured project · Africa</p>
+          <h3>Transaqua</h3>
+          <p>The great project to <b>refill Lake Chad</b> — transferring a small fraction of the water of the Congo River basin northward through a ~2,400&nbsp;km navigable canal, bringing water, power, and transport to the heart of Africa.</p>
+          <ul class="facts">
+            <li>Would benefit some 40 million people across 12 nations</li>
+            <li>A navigable waterway spine for inland Africa: irrigation, hydropower, and commerce</li>
+            <li>Restores the shrinking Lake Chad — turning a security crisis into a development driver</li>
+          </ul>
+        </div>
+        <div class="proj-media">
+          <!-- demo video ID — swap data-yt-id/title/thumb for the real Transaqua video -->
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="Transaqua (demo video)" role="button" tabindex="0" aria-label="Play: Transaqua (demo video). Loads the video from YouTube.">
+            <img src="assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ Click to play — video loads from YouTube (Google). <a href="privacy.html">Privacy</a></span>
+          </div>
+          <div class="ph ar-4x3">
+            <span class="ph-ar">4:3</span>
+            <span class="ph-ico">🗺</span>
+            <span class="ph-label">Lake Chad basin map</span>
+            <span class="ph-note">Supporting map or infographic placeholder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S. America -->
+    <div class="panel" id="panel-samerica" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">Featured project · South America</p>
+          <h3>Chancay Port &amp; the Bioceanic Corridor</h3>
+          <p><em style="font-size:13px;color:var(--ink-soft)">⬡ Draft copy — the pamphlet document leaves this section open; the projects below are taken from the World Land-Bridge map and can be replaced.</em></p>
+          <p>The deepest-water port in South America, at Chancay, Peru, joins a <b>bioceanic rail corridor</b> linking the Pacific coast to the Atlantic coast of Brazil — cutting Shanghai-to-South-America shipping times by up to a quarter and opening the continent’s interior to development.</p>
+          <ul class="facts">
+            <li>8,000+ direct jobs and an estimated $4.5 billion in annual revenue</li>
+            <li>Rail spine magnifying the impact of the port across the whole continent</li>
+            <li>South America joins the World Land-Bridge</li>
+          </ul>
+        </div>
+        <div class="proj-media">
+          <!-- demo video ID — swap data-yt-id/title/thumb for the real S. America video -->
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="Chancay Port &amp; Bioceanic Corridor (demo video)" role="button" tabindex="0" aria-label="Play: Chancay Port &amp; Bioceanic Corridor (demo video). Loads the video from YouTube.">
+            <img src="assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ Click to play — video loads from YouTube (Google). <a href="privacy.html">Privacy</a></span>
+          </div>
+          <div class="ph ar-4x3">
+            <span class="ph-ar">4:3</span>
+            <span class="ph-ico">🗺</span>
+            <span class="ph-label">Corridor map</span>
+            <span class="ph-note">Map or infographic placeholder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bronx -->
+    <div class="panel" id="panel-bronx" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">Featured project · The Bronx, New York</p>
+          <h3>Development Begins at Home</h3>
+          <p><em style="font-size:13px;color:var(--ink-soft)">⬡ Placeholder — the featured Bronx project is to be announced.</em></p>
+          <p>The World Land-Bridge is not only about distant continents — it is a mission for every community. The Bronx section will feature the youth movement’s local organizing and a concrete development project for New York, connecting the neighborhood to the world.</p>
+          <ul class="facts">
+            <li>Featured project text to be supplied</li>
+            <li>Local youth-movement activities and events</li>
+            <li>How to get involved on the ground</li>
+          </ul>
+        </div>
+        <div class="proj-media">
+          <!-- demo video ID — swap data-yt-id/title/thumb for the real Bronx video -->
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="The Bronx — featured project (demo video)" role="button" tabindex="0" aria-label="Play: The Bronx — featured project (demo video). Loads the video from YouTube.">
+            <img src="assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ Click to play — video loads from YouTube (Google). <a href="privacy.html">Privacy</a></span>
+          </div>
+          <div class="ph ar-4x3">
+            <span class="ph-ar">4:3</span>
+            <span class="ph-ico">📷</span>
+            <span class="ph-label">Local organizing photo</span>
+            <span class="ph-note">Photo placeholder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ E. MEET THE GLOBAL SOUTH ============ -->
+<section id="voices" class="sec dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">E</span> Meet the Global South</span>
+      <h2>Voices of the World Majority</h2>
+      <p class="sec-lede">A series of video interviews with representatives of the Global South — statesmen, scientists, and youth leaders — from the Schiller Institute’s YouTube channel.</p>
+    </div>
+
+    <div class="voice-grid">
+      <article class="voice-card reveal">
+        <div class="thumb">
+          <!-- demo video ID — swap data-yt-id/title/thumb per real interview -->
+          <div class="yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="Interview (demo video)" role="button" tabindex="0" aria-label="Play interview. Loads the video from YouTube.">
+            <img src="assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ Click to play — video loads from YouTube (Google). <a href="privacy.html">Privacy</a></span>
+          </div>
+        </div>
+        <div class="vc-meta"><b>Interview title placeholder</b><span>Name · Country — Global South representative</span></div>
+      </article>
+      <article class="voice-card reveal" data-delay="1">
+        <div class="thumb">
+          <!-- demo video ID — swap data-yt-id/title/thumb per real interview -->
+          <div class="yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="Interview (demo video)" role="button" tabindex="0" aria-label="Play interview. Loads the video from YouTube.">
+            <img src="assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ Click to play — video loads from YouTube (Google). <a href="privacy.html">Privacy</a></span>
+          </div>
+        </div>
+        <div class="vc-meta"><b>Interview title placeholder</b><span>Name · Country — Global South representative</span></div>
+      </article>
+      <article class="voice-card reveal" data-delay="2">
+        <div class="thumb">
+          <!-- demo video ID — swap data-yt-id/title/thumb per real interview -->
+          <div class="yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="Interview (demo video)" role="button" tabindex="0" aria-label="Play interview. Loads the video from YouTube.">
+            <img src="assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ Click to play — video loads from YouTube (Google). <a href="privacy.html">Privacy</a></span>
+          </div>
+        </div>
+        <div class="vc-meta"><b>Interview title placeholder</b><span>Name · Country — Global South representative</span></div>
+      </article>
+    </div>
+
+    <div class="voice-more reveal">
+      <a class="btn btn-gold" href="https://www.youtube.com/@SchillerInstitute" target="_blank" rel="noopener">More Interviews on YouTube ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ F. SIGN UP ============ -->
+<section id="signup" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">F</span> Sign Up</span>
+      <h2>Join the Youth Movement</h2>
+    </div>
+
+    <div class="highlight-card reveal">
+      <div class="hc-media">
+        <div class="ph ar-16x9">
+          <span class="ph-ar">16:9</span>
+          <span class="ph-ico">🎬</span>
+          <span class="ph-label">Conference highlights video</span>
+          <span class="ph-note">Highlights reel from the December 2025 conference</span>
+        </div>
+      </div>
+      <div class="hc-body">
+        <span class="hc-tag">Highlights · December 2025</span>
+        <h3>International Online Youth Conference<br>“Young People of the World, Unite!”</h3>
+        <p>Young people from across six continents gathered online to take up the fight for a new paradigm. Watch the highlights, then take your place in what comes next.</p>
+        <div><a class="btn btn-gold js-draft" href="#">Watch Highlights ▶</a></div>
+      </div>
+    </div>
+
+    <div class="signup-grid">
+      <div class="signup-card reveal">
+        <span class="sc-ico">💬</span>
+        <h4>Join the WhatsApp Group</h4>
+        <p>Connect directly with youth-movement organizers worldwide. Scan the QR code or tap the button.</p>
+        <div class="qr__container">
+          <div class="ph ar-1x1 qr">
+            <span class="ph-ar">1:1</span>
+            <span class="ph-ico">▦</span>
+            <span class="ph-label">QR code</span>
+            <span class="ph-note">WhatsApp group QR</span>
+          </div>
+
+        </div>
+        <a class="signup-btn btn btn-green js-draft" href="#">Open WhatsApp Group</a>
+      </div>
+
+      <div class="signup-card reveal" data-delay="1">
+        <span class="sc-ico">📰</span>
+        <h4>Free EIR Subscription</h4>
+        <p><em>Executive Intelligence Review</em> — the weekly journal founded by Lyndon LaRouche. Get your free subscription and study the ideas behind the movement.</p>
+        <a class="signup-btn btn btn-green js-draft" href="#">Subscribe Free</a>
+      </div>
+
+      <div class="signup-card reveal" data-delay="2">
+        <span class="sc-ico">✉️</span>
+        <h4>Get Involved</h4>
+        <p>Leave your email and a local organizer will reach out about joining the International Youth Movement.</p>
+        <form class="signup-form">
+          <input type="email" required placeholder="your@email.org" aria-label="Email address">
+          <label class="consent"><input type="checkbox" required> I agree that my email is stored to contact me about the Youth Movement. <a href="privacy.html">Privacy Policy</a></label>
+          <button class="signup-btn btn btn-green" type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <img src="assets/si-logo-dark.png" alt="Schiller Institute" width="574" height="137" loading="lazy" decoding="async">
+      <div class="foot-links">
+        <a href="https://schillerinstitute.com/" target="_blank" rel="noopener">schillerinstitute.com</a>
+        <a href="https://www.youtube.com/@SchillerInstitute" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://larouchepub.com/" target="_blank" rel="noopener">EIR / larouchepub.com</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="impressum.html">Legal Notice</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>© <span id="yr"></span> The Schiller Institute — International Youth Movement.</span>
+      <span>⬡ Draft site — placeholder items marked with dashed outlines.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-wrap">
+    <div class="modal" id="modalBox">
+      <button class="m-close" id="modalClose" aria-label="Close">✕</button>
+      <div class="m-media" id="modalMedia"></div>
+      <div class="m-body">
+        <p class="m-region" id="modalRegion"></p>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+        <button class="btn btn-green" id="modalGo">Explore this section ↓</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">⬡ Draft — this link/form will be wired up when the final destination is supplied.</div>
+
+<script src="main.js"></script>
+</body>
+</html>
