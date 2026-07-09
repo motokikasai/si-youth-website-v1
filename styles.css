@@ -154,7 +154,7 @@ a:hover{text-decoration:underline}
 .btn-gold:hover{background:var(--gold-soft)}
 .btn-ghost{background:rgba(255,255,255,.08);color:#f0efe9;border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px)}
 .btn-ghost:hover{background:rgba(255,255,255,.16)}
-.btn-green{background:var(--green);color:#fff}
+.btn-green{background:var(--green);color:#fff;min-height:50px;}
 .btn-green:hover{background:var(--green-deep)}
 .signup-btn {justify-content:center;width: 100%;text-align:center;}
 .hero-note{
@@ -193,6 +193,17 @@ section{scroll-margin-top:calc(var(--nav-h) + 8px)}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 .reveal[data-delay="1"]{transition-delay:.12s}.reveal[data-delay="2"]{transition-delay:.24s}.reveal[data-delay="3"]{transition-delay:.36s}
+
+/* project map */
+.project-map{
+  position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  border:1.5px dashed rgba(46,107,79,.5);border-radius:14px;
+  background:
+    repeating-linear-gradient(-45deg, rgba(46,107,79,.045) 0 12px, transparent 12px 24px),
+    var(--paper-2);
+  color:var(--ink-soft);text-align:center;overflow:hidden;
+}
+.map-align-top{padding-top:120px;}
 
 /* ---------- PLACEHOLDER ---------- */
 .ph{
@@ -243,7 +254,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 8px)}
 .call-byline{margin-top:26px;display:flex;align-items:center;gap:14px}
 .call-byline .avatar{
   width:52px;height:52px;border-radius:50%;flex-shrink:0;
-  border:1.5px dashed rgba(232,180,92,.6);display:grid;place-items:center;font-size:20px;color:var(--gold-soft);
+  display:grid;place-items:center;font-size:20px;color:var(--gold-soft);
 }
 .call-byline .who{font-size:14px;color:rgba(240,240,232,.85);font-weight:600}
 .call-byline .who small{display:block;font-weight:400;color:rgba(240,240,232,.55);font-size:12px;margin-top:2px}
@@ -256,6 +267,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 8px)}
 .call-stat:hover{transform:translateX(6px);background:rgba(255,255,255,.09)}
 .call-stat b{font-family:var(--serif);font-size:30px;color:var(--gold-soft);display:block;line-height:1.1}
 .call-stat span{font-size:13px;color:rgba(240,240,232,.7)}
+.helga-avatar{border-radius:50%;border:1px solid rgba(232,180,92,.6);}
 
 /* ---------- B. LAROUCHE ARTICLE ---------- */
 .article-kicker{
@@ -301,9 +313,12 @@ figure.art-fig figcaption::before{content:"—";color:var(--gold);flex-shrink:0}
 .helga-portrait{position:sticky;top:calc(var(--nav-h) + 24px)}
 @media(max-width:880px){.helga-portrait{position:static;max-width:340px}}
 .helga-card{background:var(--paper);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--line)}
+.helga-photo{position:relative;overflow:hidden}
+.helga-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .helga-card .meta{padding:18px 22px}
 .helga-card .meta b{font-family:var(--serif);font-size:20px;color:var(--green-dark)}
 .helga-card .meta span{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:3px}
+.helga-image{object-fit:cover;max-height:450px;}
 .principles{display:flex;flex-direction:column;gap:12px;counter-reset:pr}
 .principle{
   background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;
