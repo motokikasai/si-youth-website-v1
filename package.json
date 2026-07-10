@@ -1,0 +1,8 @@
+{
+  "name": "si-pamphlet-spa-2026",
+  "private": true,
+  "description": "Schiller Institute Youth Movement — multilingual static site. Run `npm run build` after editing templates/ or i18n/.",
+  "scripts": {
+    "build": "node build.js"
+  }
+}

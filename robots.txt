@@ -1,5 +1,7 @@
-# Replace PLACEHOLDER-DOMAIN.example with the real domain before launch
+# Canonical domain decided 2026-07: youth.schillerinstitute.com
+# (if it changes: update ORIGIN in build.js, rebuild, and update this file
+#  plus privacy.html / impressum.html — see BUILD.md)
 User-agent: *
 Allow: /
 
-Sitemap: https://PLACEHOLDER-DOMAIN.example/sitemap.xml
+Sitemap: https://youth.schillerinstitute.com/sitemap.xml

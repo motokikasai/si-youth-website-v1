@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>席勒学会国际青年运动 — 用思想的力量改变世界</title>
+<meta name="description" content="加入席勒学会国际青年运动，用思想的力量改变世界。">
+
+<!-- ═══ Canonical domain is set once in build.js (ORIGIN) — edit there and rebuild ═══ -->
+<link rel="canonical" href="https://youth.schillerinstitute.com/zh/">
+<link rel="alternate" hreflang="en" href="https://youth.schillerinstitute.com/en/">
+<link rel="alternate" hreflang="es" href="https://youth.schillerinstitute.com/es/">
+<link rel="alternate" hreflang="fr" href="https://youth.schillerinstitute.com/fr/">
+<link rel="alternate" hreflang="pt" href="https://youth.schillerinstitute.com/pt/">
+<link rel="alternate" hreflang="de" href="https://youth.schillerinstitute.com/de/">
+<link rel="alternate" hreflang="ar" href="https://youth.schillerinstitute.com/ar/">
+<link rel="alternate" hreflang="da" href="https://youth.schillerinstitute.com/da/">
+<link rel="alternate" hreflang="it" href="https://youth.schillerinstitute.com/it/">
+<link rel="alternate" hreflang="ja" href="https://youth.schillerinstitute.com/ja/">
+<link rel="alternate" hreflang="zh" href="https://youth.schillerinstitute.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://youth.schillerinstitute.com/en/">
+<meta name="theme-color" content="#0f2a1e">
+
+<!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="席勒学会国际青年运动">
+<meta property="og:title" content="用思想的力量改变世界">
+<meta property="og:description" content="全世界的青年，联合起来！加入席勒学会国际青年运动 — 以发展促和平，弘扬人类心智的创造力。">
+<meta property="og:url" content="https://youth.schillerinstitute.com/zh/">
+<meta property="og:image" content="https://youth.schillerinstitute.com/assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="从太空俯瞰夜晚的地球，城市灯光勾勒出横贯各大洲的发展走廊">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="席勒学会国际青年运动">
+<meta name="twitter:description" content="用思想的力量改变世界 — 加入国际青年运动。">
+<meta name="twitter:image" content="https://youth.schillerinstitute.com/assets/og-card.jpg">
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+
+<!-- Performance -->
+<link rel="preload" as="image" href="../assets/hero-earth.jpg" fetchpriority="high">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Schiller Institute International Youth Movement",
+  "url": "https://youth.schillerinstitute.com/",
+  "logo": "https://youth.schillerinstitute.com/assets/si-logo-light.png",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "The Schiller Institute",
+    "url": "https://schillerinstitute.com/"
+  }
+}
+</script>
+<!--
+  ============================================================
+  DRAFT — Schiller Institute Youth Movement single-page site
+  ------------------------------------------------------------
+  GENERATED FILE (when read under /en/, /de/, …) — do not edit
+  the language folders by hand. Edit templates/index.template.html
+  and i18n/<lang>.json, then run:  node build.js
+  See BUILD.md.
+
+  VIEWING: run ./serve.sh and open http://localhost:8080 — YouTube
+  embeds show "Error 153" if the page is opened directly as a file://
+  (YouTube requires an HTTP referrer since 2025).
+
+  ASSET SWAP GUIDE
+  • Hero video: when the final looping animation is ready, put it at
+    assets/hero-landbridge.mp4 — the <video> tag in the .hero section
+    below is already wired up; just uncomment it. The animated still
+    (assets/hero-earth.jpg) automatically remains the poster/fallback.
+  • All placeholders are marked with class "ph" and carry a
+    data-note describing the expected content + aspect ratio.
+  ============================================================
+-->
+<!-- fonts are self-hosted (assets/fonts/) — no Google CDN, no cross-origin requests -->
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" aria-label="主导航">
+  <a class="nav-logo" href="#top" aria-label="席勒学会 — 返回顶部">
+    <img class="logo-light" src="../assets/si-logo-light.png" alt="Schiller Institute" width="558" height="115">
+    <img class="logo-dark" src="../assets/si-logo-dark.png" alt="Schiller Institute" width="574" height="137">
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#call">行动倡议</a>
+    <a href="#larouche">林登·拉鲁什</a>
+    <a href="#helga">黑尔加·拉鲁什</a>
+    <a href="#landbridge">世界陆桥</a>
+    <a href="#voices">全球南方</a>
+    <a href="#signup" class="nav-cta">报名参加</a>
+  </div>
+  <details class="lang-switch" id="langSwitch">
+    <summary aria-label="语言: 中文" title="语言">
+      <svg class="ls-globe" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3.6 9h16.8M3.6 15h16.8"/></svg>
+      <span class="ls-code">ZH</span>
+      <span class="ls-caret" aria-hidden="true">▾</span>
+    </summary>
+    <ul class="ls-menu">
+      <li><a href="../en/" lang="en" hreflang="en">English</a></li>
+      <li><a href="../es/" lang="es" hreflang="es">Español</a></li>
+      <li><a href="../fr/" lang="fr" hreflang="fr">Français</a></li>
+      <li><a href="../pt/" lang="pt" hreflang="pt">Português</a></li>
+      <li><a href="../de/" lang="de" hreflang="de">Deutsch</a></li>
+      <li><a href="../ar/" lang="ar" hreflang="ar">العربية</a></li>
+      <li><a href="../da/" lang="da" hreflang="da">Dansk</a></li>
+      <li><a href="../it/" lang="it" hreflang="it">Italiano</a></li>
+      <li><a href="../ja/" lang="ja" hreflang="ja">日本語</a></li>
+      <li><a href="../zh/" lang="zh" hreflang="zh" class="current" aria-current="true">中文</a></li>
+    </ul>
+  </details>
+  <button class="nav-burger" id="burger" aria-label="打开或关闭菜单" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-media" aria-hidden="true">
+    <!--
+      FINAL VIDEO SLOT — when the looping land-bridge animation is finished,
+      uncomment this tag (drop the file at assets/hero-landbridge.mp4) and the
+      animated still below it becomes the poster/fallback automatically.
+
+    <video autoplay muted loop playsinline poster="../assets/hero-earth.jpg">
+      <source src="../assets/hero-landbridge.mp4" type="video/mp4">
+    </video>
+    -->
+    <img src="../assets/hero-earth.jpg" alt="" width="2048" height="1150" fetchpriority="high" decoding="async">
+  </div>
+  <div class="hero-stars" id="stars" aria-hidden="true"></div>
+  <div class="hero-aurora" aria-hidden="true"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">席勒学会</span>
+    <h1 id="heroTitle">国际青年运动：用<em>思想的力量</em>改变世界</h1>
+    <p class="hero-sub">一场遍布全球的青年运动，正在建设文明的下一个范式 — 以发展促和平，弘扬人类心智的创造力。</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#signup">加入运动</a>
+      <a class="btn btn-ghost" href="#call">阅读倡议 ↓</a>
+    </div>
+  </div>
+
+  <!-- <span class="hero-note">⬡ placeholder — final looping land-bridge animation in production</span> -->
+  <a class="scroll-cue" href="#call" aria-label="滚动至正文">▾</a>
+</header>
+
+<!-- ============ A. CALL TO ACTION ============ -->
+<section id="call" class="sec dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">A</span> 行动倡议</span>
+      <h2>全世界的青年 — 这是属于你们的时刻</h2>
+    </div>
+    <div class="call-grid">
+      <div class="reveal">
+        <blockquote class="call-quote">
+          <span class="tbd" title="占位文本 — 行动倡议的最终文稿待定">历史不是发生在你身上的事情，而是由你亲手创造的事业。我们呼吁各大洲的青年把目光提升到当下危机之上，与我们一道建设一个由主权国家、共同发展和不可阻挡的人类创造力构成的世界。</span>
+        </blockquote>
+        <div class="call-byline">
+          <span class="avatar" aria-hidden="true"><img src="../assets/helga-zepp-larouche-in-china.jpg" alt="黑尔加·策普-拉鲁什在中国" width="52" height="52" class="helga-avatar"></span>
+          <span class="who">
+            黑尔加·策普-拉鲁什
+            <small>席勒学会创始人</small>
+          </span>
+        </div>
+      </div>
+      <div class="call-side">
+        <div class="call-stat reveal" data-delay="1"><b>6 大洲</b><span>青年运动今天正在这里组织起来</span></div>
+        <div class="call-stat reveal" data-delay="2"><b>1 个人类</b><span>由思想的力量联合起来，而不是被地缘政治分裂</span></div>
+        <div class="call-stat reveal" data-delay="3">
+          <a class="btn btn-gold" href="#signup" style="align-self:flex-start">响应倡议 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ B. FROM LYNDON LAROUCHE ============ -->
+<section id="larouche" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">B</span> 林登·拉鲁什文选</span>
+      <h2>从普遍历史的高度看非洲当前的危机</h2>
+      <p class="sec-lede">节选自小林登·H·拉鲁什1997年4月26日在德国瓦卢夫举行的席勒学会会议“以发展促进非洲大湖地区的和平”上的演讲。首次发表于<em>EIR</em>杂志第24卷第22期，1997年5月23日。</p>
+    </div>
+
+    <div class="narrow">
+      <figure class="art-fig reveal">
+        <img src="../assets/larouche-walluf-1997.jpg" width="756" height="494" loading="lazy" decoding="async" alt="1997年，林登·拉鲁什在德国瓦卢夫的席勒学会会议上向非洲外交官和来宾发表演讲">
+        <figcaption>林登·拉鲁什在席勒学会会议“以发展促进非洲大湖地区的和平”上向非洲外交官和来宾发表演讲。德国瓦卢夫，1997年4月26日。<em>EIRNS／克里斯托弗·刘易斯</em></figcaption>
+      </figure>
+
+      <div class="article">
+        <p class="reveal">虽然我对其中许多议题都有兴趣，也参与了今天将要讨论的许多话题，但我认为更合适的是谈一个没有其他人会谈的话题：那就是世界的形势，因为它决定着非洲的形势。</p>
+
+        <p class="reveal">现在，我请你们暂时跳出非洲人的身份，登上一座高山之巅。从那里，你们既能远眺这个星球上人口的广袤，也能回望它数百年的过去。看看我们所处的境地；俯视这颗你们恰好生活于其上的星球，但请在山顶多停留片刻，问一问：整个世界正在发生什么？</p>
+
+        <!-- <figure class="art-fig reveal">
+          <div class="ph ar-21x9">
+            <span class="ph-ar">21:9</span>
+            <span class="ph-ico">🖼</span>
+            <span class="ph-label">Image placeholder</span>
+            <span class="ph-note">Wide archival image — e.g. conference panorama or Great Lakes region development map</span>
+          </div>
+          <figcaption>Caption placeholder — credit line to follow.</figcaption>
+        </figure> -->
+
+        <p class="reveal">让我们结合世界正在发生的一切，来看非洲、它的发展和它今天的苦难。而你们看到的是：这个行星文明正在<em>解体！</em></p>
+
+        <p class="reveal">我们正处在全人类历史上最大的全球性金融崩溃的边缘 — 实际上已身处其中。我们已经到了这样的地步：除中国可能是例外，任何国家的货币体系都可能在某个早晨土崩瓦解。也就是说，金融投机可能引发连锁反应，在48到72小时之内消灭这个星球上的每一种货币、每一家银行 — 只因一切都被冻结；由于崩溃，货币不再可以流通。这是可能发生的。</p>
+      </div>
+
+      <div class="art-cols reveal">
+        <figure class="art-fig">
+          <img src="../assets/fdr-liberia-1943.jpg" width="737" height="500" loading="lazy" decoding="async" alt="1943年，富兰克林·D·罗斯福在利比里亚检阅部队">
+          <figcaption>富兰克林·罗斯福总统在利比里亚，1943年 — 出自同一篇<em>EIR</em>文章。</figcaption>
+        </figure>
+        <figure class="art-fig">
+          <img src="../assets/binaisa-godfrey.jpg" width="756" height="422" loading="lazy" decoding="async" alt="乌干达前总统戈弗雷·比奈萨">
+          <figcaption>乌干达前总统戈弗雷·比奈萨 — 出自同一篇<em>EIR</em>文章。</figcaption>
+        </figure>
+      </div>
+
+      <div class="read-more reveal">
+        <span><b>继续阅读 —</b> 演讲全文阐述了人作为思想的造物的本性，以及非洲在普遍历史中的位置。</span>
+        <a class="btn btn-green" href="https://larouchepub.com/lar/2026/5322-viewing_africa_s_current_crisi-lar.html" target="_blank" rel="noopener">阅读演讲全文 ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ C. FROM HELGA LAROUCHE ============ -->
+<section id="helga" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">C</span> 黑尔加·拉鲁什文选</span>
+      <h2>新的国际安全与发展架构十项原则</h2>
+      <p class="sec-lede">由席勒学会创始人黑尔加·策普-拉鲁什于2022年11月30日提出。点击每项原则即可阅读。</p>
+    </div>
+
+    <div class="helga-grid">
+      <div class="helga-portrait reveal">
+        <div class="helga-card">
+          <div class="helga-photo ar-3x4">
+            <img src="../assets/helga-zepp-larouche-answers.jpg" alt="黑尔加·策普-拉鲁什肖像" class="helga-image" width="868" height="768" loading="lazy" decoding="async">
+          </div>
+          <div class="meta">
+            <b>黑尔加·策普-拉鲁什</b>
+            <span>席勒学会创始人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="principles reveal">
+        <details class="principle" open>
+          <summary>主权国家，和平共处 <span class="chev">▾</span></summary>
+          <div class="body">新的国际安全与发展架构必须是完全主权的民族国家之间的伙伴关系，以和平共处五项原则和《联合国宪章》为基础。</div>
+        </details>
+        <details class="principle">
+          <summary>消除每个国家的贫困 <span class="chev">▾</span></summary>
+          <div class="body">绝对的优先事项必须是减轻地球上每个国家的贫困 — 只要把现有技术用于共同福祉，这很容易做到。</div>
+        </details>
+        <details class="principle">
+          <summary>让每个国家拥有现代医疗体系 <span class="chev">▾</span></summary>
+          <div class="body">必须通过在地球上每个国家建立现代医疗体系，把所有人的预期寿命延长到最大潜能。</div>
+        </details>
+        <details class="principle">
+          <summary>让每个儿童和成人享有普遍教育 <span class="chev">▾</span></summary>
+          <div class="body">新架构的主要目标之一，必须是让每个儿童和每个成人都能获得普遍教育 — 开发所有人的创造潜能。</div>
+        </details>
+        <details class="principle">
+          <summary>服务于人类的金融体系 <span class="chev">▾</span></summary>
+          <div class="body">国际金融体系必须重组，使其能够提供实现这些目标所需的生产性信贷。</div>
+        </details>
+        <details class="principle">
+          <summary>连接各大洲的世界陆桥 <span class="chev">▾</span></summary>
+          <div class="body">新经济秩序必须着力创造现代工业和农业的条件，从各大洲的基础设施建设开始 — 最终通过隧道和桥梁相连，成为一座<em>世界陆桥</em>。</div>
+        </details>
+        <details class="principle">
+          <summary>终结地缘政治 — 不再划分集团 <span class="chev">▾</span></summary>
+          <div class="body">新的全球安全架构必须通过终结把世界划分为集团的做法，来消除地缘政治这一概念。</div>
+        </details>
+        <details class="principle">
+          <summary>一个人类，同舟共济 <span class="chev">▾</span></summary>
+          <div class="body">由于核武器、大流行病、互联网和其他全球性影响，人类有史以来第一次同坐一条船。我们的挑战只有共同努力才能解决。</div>
+        </details>
+        <details class="principle">
+          <summary>与物理宇宙相协调 <span class="chev">▾</span></summary>
+          <div class="body">经济、社会和政治秩序必须与物理宇宙的法则相协调。</div>
+        </details>
+        <details class="principle">
+          <summary>人性本善 <span class="chev">▾</span></summary>
+          <div class="body">人在本质上是善的，能够无限完善其心智的创造力和灵魂的美 — 这是宇宙中最先进的地质力量。</div>
+        </details>
+        <p style="font-size:12.5px;color:var(--ink-soft);margin-top:14px">
+          全文： <a href="https://schillerinstitute.com/blog/2022/11/30/ten-principles-of-a-new-international-security-and-development-architecture/" target="_blank" rel="noopener">十项原则 — schillerinstitute.com ↗</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ D. WORLD LAND-BRIDGE ============ -->
+<section id="landbridge" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">D</span> 世界陆桥</span>
+      <h2>一个由发展连接起来的星球</h2>
+      <p class="sec-lede">由林登和黑尔加·拉鲁什夫妇于1990年代初提出的全球政策构想“以发展促和平” — 铁路、水利和能源走廊把各大洲连成一体。<b>点击闪烁的标记</b>，探索一个重点项目。</p>
+    </div>
+
+    <div class="map-frame reveal" id="mapFrame">
+      <img src="../assets/landbridge-map.jpg" width="1170" height="774" loading="lazy" decoding="async" alt="世界陆桥地图，展示横贯各大洲的拟议发展走廊，包括绿洲计划、跨非调水工程、白令海峡隧道、中国“一带一路”、北美水电联盟（NAWAPA）、钱凯港和两洋走廊">
+      <!-- pins injected by JS -->
+      <span class="map-hint"><span class="dot"></span> 点击标记，探索项目</span>
+    </div>
+    <p class="map-src">地图（暂定）： <a href="https://gsmn.co.za/wp-content/uploads/2025/08/land-bridge_centerfold_asaka.jpg" target="_blank" rel="noopener">《世界陆桥》中心插页</a> — 标记位置为草案。</p>
+
+    <!-- region tabs -->
+    <div class="tabs" role="tablist" aria-label="陆桥各区域" id="tabs">
+      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="mideast" style="--sw:#d99a33"><span class="sw"></span>中东</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="africa" style="--sw:#2c8b8b"><span class="sw"></span>非洲</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="samerica" style="--sw:#c05b3f"><span class="sw"></span>南美洲</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="bronx" style="--sw:#2e6b4f"><span class="sw"></span>布朗克斯</button>
+    </div>
+
+    <!-- Middle East -->
+    <div class="panel active" id="panel-mideast" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">重点项目 · 中东</p>
+          <h3>绿洲计划</h3>
+          <p>林登·拉鲁什于1975年首次提出的巴勒斯坦和以色列五十年发展远景：和平不建立在纸面条约之上，而建立在实体经济之上 — 为该地区所有人民提供<b>水、能源和交通</b>。</p>
+          <ul class="facts">
+            <li>核能海水淡化创造充沛的淡水，让今天为稀缺而争斗的地缘政治失去土壤</li>
+            <li>新的运河、铁路走廊和发展型城市把该地区纳入世界陆桥</li>
+            <li>发展是持久和平的真正基础</li>
+          </ul>
+          <div class="doc-link">
+            <span class="ico">📄</span>
+            <span>
+              <a href="https://drive.google.com/file/d/1D4XW7X-kvOcxmigJcQqWTCKZwAojs8Wi/view?usp=sharing" target="_blank" rel="noopener">绿洲计划文件（PDF）↗</a>
+              <!-- <em style="opacity:.7"> — ⬡ full contents &amp; map to be integrated</em> -->
+            </span>
+          </div>
+        </div>
+        <div class="proj-media">
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="绿洲计划 — 席勒学会视频" role="button" tabindex="0" aria-label="播放：绿洲计划。将从 YouTube 加载视频。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ 点击播放 — 视频将从 YouTube（谷歌）加载。<a href="../privacy.html">隐私</a></span>
+          </div>
+          <div class="project-map ar-4x3 map-align-top">
+            <img src="../assets/oasis-plan-00.png" alt="绿洲计划地图">
+            <!-- <span class="ph-ar">4:3</span>
+            <span class="ph-ico">🗺</span>
+            <span class="ph-label">Oasis Plan regional map</span>
+            <span class="ph-note">Map from the source document — to be extracted and placed here</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Africa -->
+    <div class="panel" id="panel-africa" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">重点项目 · 非洲</p>
+          <h3>跨非调水工程</h3>
+          <p><b>重新注满乍得湖</b>的宏大工程 — 通过一条约2400公里的通航运河，把刚果河流域的一小部分水量向北输送，为非洲腹地带来水、能源和交通。</p>
+          <ul class="facts">
+            <li>将惠及12个国家约4000万人</li>
+            <li>非洲内陆的通航水道脊梁：灌溉、水电与商业</li>
+            <li>恢复日益萎缩的乍得湖 — 把安全危机转化为发展动力</li>
+          </ul>
+        </div>
+        <div class="proj-media">
+          <!-- demo video ID — swap data-yt-id/title/thumb for the real Transaqua video -->
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="跨非调水工程（演示视频）" role="button" tabindex="0" aria-label="播放：跨非调水工程（演示视频）。将从 YouTube 加载视频。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ 点击播放 — 视频将从 YouTube（谷歌）加载。<a href="../privacy.html">隐私</a></span>
+          </div>
+          <div class="ph ar-4x3">
+            <span class="ph-ar">4:3</span>
+            <span class="ph-ico">🗺</span>
+            <span class="ph-label">乍得湖流域地图</span>
+            <span class="ph-note">地图或信息图占位</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S. America -->
+    <div class="panel" id="panel-samerica" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">重点项目 · 南美洲</p>
+          <h3>钱凯港与两洋走廊</h3>
+          <p><em style="font-size:13px;color:var(--ink-soft)">⬡ 草稿 — 小册子原文未定稿；以下项目取自世界陆桥地图，可以替换。</em></p>
+          <p>位于秘鲁钱凯的南美洲最深水港，与连接太平洋沿岸和巴西大西洋沿岸的<b>两洋铁路走廊</b>相接 — 将上海至南美的海运时间最多缩短四分之一，并向发展敞开大陆腹地。</p>
+          <ul class="facts">
+            <li>8000多个直接就业岗位，年收入估计达45亿美元</li>
+            <li>铁路脊梁把港口的带动作用放大到整个大陆</li>
+            <li>南美洲融入世界陆桥</li>
+          </ul>
+        </div>
+        <div class="proj-media">
+          <!-- demo video ID — swap data-yt-id/title/thumb for the real S. America video -->
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="钱凯港与两洋走廊（演示视频）" role="button" tabindex="0" aria-label="播放：钱凯港与两洋走廊（演示视频）。将从 YouTube 加载视频。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ 点击播放 — 视频将从 YouTube（谷歌）加载。<a href="../privacy.html">隐私</a></span>
+          </div>
+          <div class="ph ar-4x3">
+            <span class="ph-ar">4:3</span>
+            <span class="ph-ico">🗺</span>
+            <span class="ph-label">走廊地图</span>
+            <span class="ph-note">地图或信息图占位</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bronx -->
+    <div class="panel" id="panel-bronx" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">重点项目 · 纽约布朗克斯</p>
+          <h3>发展从家园开始</h3>
+          <p><em style="font-size:13px;color:var(--ink-soft)">⬡ 占位 — 布朗克斯重点项目即将公布。</em></p>
+          <p>世界陆桥不只是关于遥远的大洲 — 它是每个社区的使命。布朗克斯板块将介绍青年运动的本地组织工作，以及一个面向纽约的具体发展项目，把街区与世界连接起来。</p>
+          <ul class="facts">
+            <li>重点项目文稿待补充</li>
+            <li>青年运动的本地活动与聚会</li>
+            <li>如何在当地参与</li>
+          </ul>
+        </div>
+        <div class="proj-media">
+          <!-- demo video ID — swap data-yt-id/title/thumb for the real Bronx video -->
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="布朗克斯 — 重点项目（演示视频）" role="button" tabindex="0" aria-label="播放：布朗克斯 — 重点项目（演示视频）。将从 YouTube 加载视频。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ 点击播放 — 视频将从 YouTube（谷歌）加载。<a href="../privacy.html">隐私</a></span>
+          </div>
+          <div class="ph ar-4x3">
+            <span class="ph-ar">4:3</span>
+            <span class="ph-ico">📷</span>
+            <span class="ph-label">本地组织活动照片</span>
+            <span class="ph-note">照片占位</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ E. MEET THE GLOBAL SOUTH ============ -->
+<section id="voices" class="sec dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">E</span> 走近全球南方</span>
+      <h2>世界多数的声音</h2>
+      <p class="sec-lede">对全球南方代表 — 政治家、科学家和青年领袖 — 的系列视频访谈，来自席勒学会的 YouTube 频道。</p>
+    </div>
+
+    <div class="voice-grid">
+      <article class="voice-card reveal">
+        <div class="thumb">
+          <!-- demo video ID — swap data-yt-id/title/thumb per real interview -->
+          <div class="yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="访谈（演示视频）" role="button" tabindex="0" aria-label="播放访谈。将从 YouTube 加载视频。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ 点击播放 — 视频将从 YouTube（谷歌）加载。<a href="../privacy.html">隐私</a></span>
+          </div>
+        </div>
+        <div class="vc-meta"><b>访谈标题（占位）</b><span>姓名 · 国家 — 全球南方代表</span></div>
+      </article>
+      <article class="voice-card reveal" data-delay="1">
+        <div class="thumb">
+          <!-- demo video ID — swap data-yt-id/title/thumb per real interview -->
+          <div class="yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="访谈（演示视频）" role="button" tabindex="0" aria-label="播放访谈。将从 YouTube 加载视频。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ 点击播放 — 视频将从 YouTube（谷歌）加载。<a href="../privacy.html">隐私</a></span>
+          </div>
+        </div>
+        <div class="vc-meta"><b>访谈标题（占位）</b><span>姓名 · 国家 — 全球南方代表</span></div>
+      </article>
+      <article class="voice-card reveal" data-delay="2">
+        <div class="thumb">
+          <!-- demo video ID — swap data-yt-id/title/thumb per real interview -->
+          <div class="yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="访谈（演示视频）" role="button" tabindex="0" aria-label="播放访谈。将从 YouTube 加载视频。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ 点击播放 — 视频将从 YouTube（谷歌）加载。<a href="../privacy.html">隐私</a></span>
+          </div>
+        </div>
+        <div class="vc-meta"><b>访谈标题（占位）</b><span>姓名 · 国家 — 全球南方代表</span></div>
+      </article>
+    </div>
+
+    <div class="voice-more reveal">
+      <a class="btn btn-gold" href="https://www.youtube.com/@SchillerInstitute" target="_blank" rel="noopener">在 YouTube 观看更多访谈 ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ F. SIGN UP ============ -->
+<section id="signup" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">F</span> 报名参加</span>
+      <h2>加入青年运动</h2>
+    </div>
+
+    <div class="highlight-card reveal">
+      <div class="hc-media">
+        <img class="hc-bg" src="../assets/yt-thumb-youth.jpg" alt="" loading="lazy" decoding="async">
+        <button class="hc-play js-highlights" type="button" aria-label="观看会议精彩集锦视频">
+          <i aria-hidden="true">▶</i>
+        </button>
+      </div>
+      <div class="hc-body">
+        <span class="hc-tag">精彩集锦 · 2025年12月</span>
+        <h3>国际线上青年大会<br>“全世界的青年，联合起来！”</h3>
+        <p>来自六大洲的青年在线上相聚，投身争取新范式的斗争。观看精彩集锦，然后在接下来的行动中占据你的位置。</p>
+        <div><button class="btn btn-gold js-highlights" type="button">观看集锦 ▶</button></div>
+      </div>
+    </div>
+
+    <div class="signup-grid">
+      <div class="signup-card reveal">
+        <span class="sc-ico">💬</span>
+        <h4>加入 WhatsApp 群组</h4>
+        <p>与世界各地的青年运动组织者直接联系。扫描二维码或点按按钮。</p>
+        <div class="qr__container">
+          <div class="ph ar-1x1 qr">
+            <span class="ph-ar">1:1</span>
+            <span class="ph-ico">▦</span>
+            <span class="ph-label">二维码</span>
+            <span class="ph-note">WhatsApp 群组二维码</span>
+          </div>
+
+        </div>
+        <a class="signup-btn btn btn-green js-draft" href="#">打开 WhatsApp 群组</a>
+      </div>
+
+      <div class="signup-card reveal" data-delay="1">
+        <span class="sc-ico">📰</span>
+        <h4>免费订阅 EIR</h4>
+        <p><em>Executive Intelligence Review</em>（行政情报评论）— 林登·拉鲁什创办的周刊。获取免费订阅，研究运动背后的思想。</p>
+        <a class="signup-btn btn btn-green js-draft" href="#">免费订阅</a>
+      </div>
+
+      <div class="signup-card reveal" data-delay="2">
+        <span class="sc-ico">✉️</span>
+        <h4>参与进来</h4>
+        <p>留下你的电子邮箱，当地组织者将与你联系，介绍如何加入国际青年运动。</p>
+        <form class="signup-form">
+          <input type="email" required placeholder="your@email.org" aria-label="电子邮箱地址">
+          <label class="consent"><input type="checkbox" required> 我同意保存我的电子邮箱，以便就青年运动与我联系。 <a href="../privacy.html">隐私政策</a></label>
+          <button class="signup-btn btn btn-green" type="submit">报名</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <img src="../assets/si-logo-dark.png" alt="Schiller Institute" width="574" height="137" loading="lazy" decoding="async">
+      <div class="foot-links">
+        <a href="https://schillerinstitute.com/" target="_blank" rel="noopener">schillerinstitute.com</a>
+        <a href="https://www.youtube.com/@SchillerInstitute" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://larouchepub.com/" target="_blank" rel="noopener">EIR / larouchepub.com</a>
+        <a href="../privacy.html">隐私政策</a>
+        <a href="../impressum.html">法律声明</a>
+        <a href="#top">返回顶部 ↑</a>
+      </div>
+    </div>
+    <div class="foot-langs" aria-label="语言">
+      <span class="fl-label" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3.6 9h16.8M3.6 15h16.8"/></svg></span>
+      <a href="../en/" lang="en" hreflang="en">English</a>
+      <a href="../es/" lang="es" hreflang="es">Español</a>
+      <a href="../fr/" lang="fr" hreflang="fr">Français</a>
+      <a href="../pt/" lang="pt" hreflang="pt">Português</a>
+      <a href="../de/" lang="de" hreflang="de">Deutsch</a>
+      <a href="../ar/" lang="ar" hreflang="ar">العربية</a>
+      <a href="../da/" lang="da" hreflang="da">Dansk</a>
+      <a href="../it/" lang="it" hreflang="it">Italiano</a>
+      <a href="../ja/" lang="ja" hreflang="ja">日本語</a>
+      <a href="../zh/" lang="zh" hreflang="zh" class="current" aria-current="true">中文</a>
+    </div>
+    <div class="foot-note">
+      <span>© <span id="yr"></span> 席勒学会 — 国际青年运动</span>
+      <!-- <span>⬡ Draft site — placeholder items marked with dashed outlines.</span> -->
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-wrap">
+    <div class="modal" id="modalBox">
+      <button class="m-close" id="modalClose" aria-label="关闭">✕</button>
+      <div class="m-media" id="modalMedia"></div>
+      <div class="m-body">
+        <p class="m-region" id="modalRegion"></p>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+        <button class="btn btn-green" id="modalGo">浏览此板块 ↓</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="toast" id="toast">⬡ Draft — this link/form will be wired up when the final destination is supplied.</div> -->
+
+<script>window.I18N = {"js_consent_html":"▶ 点击播放 — 视频将从 YouTube（谷歌）加载。\u003ca href=\"../privacy.html\">隐私\u003c/a>","js_play_aria":"播放：{title}。将从 YouTube 加载视频。","js_yt_title":"YouTube 视频","js_mideast_region":"中东","js_mideast_title":"绿洲计划","js_mideast_text":"拉鲁什为巴勒斯坦和以色列制定的五十年发展计划：核能海水淡化，新的水利、交通和能源基础设施 — 建立在实体发展之上的和平。","js_africa_region":"非洲","js_africa_title":"跨非调水工程","js_africa_text":"从刚果河流域调水，重新注满乍得湖 — 一条2400公里的通航运河，惠及12个国家约4000万人，兼具水电、灌溉和内河航运。","js_samerica_region":"南美洲","js_samerica_title":"钱凯港与两洋走廊","js_samerica_text":"南美洲最深的港口与横贯秘鲁和巴西的太平洋—大西洋铁路走廊相连 — 8000多个直接就业岗位，是大陆接入世界陆桥的门户。（初步选定 — 最终项目待定。）","js_bronx_region":"布朗克斯 · 纽约","js_bronx_title":"发展从家园开始","js_bronx_text":"青年运动的本地组织中心 — 布朗克斯重点发展项目即将公布。这个标记把街区与世界连接起来。","js_highlights_title":"国际线上青年大会 — 全世界的青年，联合起来！"};</script>
+<script src="../main.js"></script>
+</body>
+</html>

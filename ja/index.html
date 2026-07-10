@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>シラー研究所 国際青年運動 — 思想の力で世界を変えよう</title>
+<meta name="description" content="シラー研究所の国際青年運動に参加しよう。思想の力で世界を変えよう。">
+
+<!-- ═══ Canonical domain is set once in build.js (ORIGIN) — edit there and rebuild ═══ -->
+<link rel="canonical" href="https://youth.schillerinstitute.com/ja/">
+<link rel="alternate" hreflang="en" href="https://youth.schillerinstitute.com/en/">
+<link rel="alternate" hreflang="es" href="https://youth.schillerinstitute.com/es/">
+<link rel="alternate" hreflang="fr" href="https://youth.schillerinstitute.com/fr/">
+<link rel="alternate" hreflang="pt" href="https://youth.schillerinstitute.com/pt/">
+<link rel="alternate" hreflang="de" href="https://youth.schillerinstitute.com/de/">
+<link rel="alternate" hreflang="ar" href="https://youth.schillerinstitute.com/ar/">
+<link rel="alternate" hreflang="da" href="https://youth.schillerinstitute.com/da/">
+<link rel="alternate" hreflang="it" href="https://youth.schillerinstitute.com/it/">
+<link rel="alternate" hreflang="ja" href="https://youth.schillerinstitute.com/ja/">
+<link rel="alternate" hreflang="zh" href="https://youth.schillerinstitute.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://youth.schillerinstitute.com/en/">
+<meta name="theme-color" content="#0f2a1e">
+
+<!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="シラー研究所 国際青年運動">
+<meta property="og:title" content="思想の力で世界を変えよう">
+<meta property="og:description" content="世界の若者よ、団結せよ！ シラー研究所の国際青年運動に参加しよう — 開発による平和と、人間精神の創造力を。">
+<meta property="og:url" content="https://youth.schillerinstitute.com/ja/">
+<meta property="og:image" content="https://youth.schillerinstitute.com/assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="宇宙から見た夜の地球。都市の光が大陸を横断する開発回廊を描き出している">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="シラー研究所 国際青年運動">
+<meta name="twitter:description" content="思想の力で世界を変えよう — 国際青年運動に参加を。">
+<meta name="twitter:image" content="https://youth.schillerinstitute.com/assets/og-card.jpg">
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+
+<!-- Performance -->
+<link rel="preload" as="image" href="../assets/hero-earth.jpg" fetchpriority="high">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Schiller Institute International Youth Movement",
+  "url": "https://youth.schillerinstitute.com/",
+  "logo": "https://youth.schillerinstitute.com/assets/si-logo-light.png",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "The Schiller Institute",
+    "url": "https://schillerinstitute.com/"
+  }
+}
+</script>
+<!--
+  ============================================================
+  DRAFT — Schiller Institute Youth Movement single-page site
+  ------------------------------------------------------------
+  GENERATED FILE (when read under /en/, /de/, …) — do not edit
+  the language folders by hand. Edit templates/index.template.html
+  and i18n/<lang>.json, then run:  node build.js
+  See BUILD.md.
+
+  VIEWING: run ./serve.sh and open http://localhost:8080 — YouTube
+  embeds show "Error 153" if the page is opened directly as a file://
+  (YouTube requires an HTTP referrer since 2025).
+
+  ASSET SWAP GUIDE
+  • Hero video: when the final looping animation is ready, put it at
+    assets/hero-landbridge.mp4 — the <video> tag in the .hero section
+    below is already wired up; just uncomment it. The animated still
+    (assets/hero-earth.jpg) automatically remains the poster/fallback.
+  • All placeholders are marked with class "ph" and carry a
+    data-note describing the expected content + aspect ratio.
+  ============================================================
+-->
+<!-- fonts are self-hosted (assets/fonts/) — no Google CDN, no cross-origin requests -->
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" aria-label="メイン">
+  <a class="nav-logo" href="#top" aria-label="シラー研究所 — ページ上部へ戻る">
+    <img class="logo-light" src="../assets/si-logo-light.png" alt="Schiller Institute" width="558" height="115">
+    <img class="logo-dark" src="../assets/si-logo-dark.png" alt="Schiller Institute" width="574" height="137">
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#call">行動の呼びかけ</a>
+    <a href="#larouche">リンドン・ラルーシュ</a>
+    <a href="#helga">ヘルガ・ラルーシュ</a>
+    <a href="#landbridge">世界ランドブリッジ</a>
+    <a href="#voices">グローバル・サウス</a>
+    <a href="#signup" class="nav-cta">参加する</a>
+  </div>
+  <details class="lang-switch" id="langSwitch">
+    <summary aria-label="言語: 日本語" title="言語">
+      <svg class="ls-globe" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3.6 9h16.8M3.6 15h16.8"/></svg>
+      <span class="ls-code">JA</span>
+      <span class="ls-caret" aria-hidden="true">▾</span>
+    </summary>
+    <ul class="ls-menu">
+      <li><a href="../en/" lang="en" hreflang="en">English</a></li>
+      <li><a href="../es/" lang="es" hreflang="es">Español</a></li>
+      <li><a href="../fr/" lang="fr" hreflang="fr">Français</a></li>
+      <li><a href="../pt/" lang="pt" hreflang="pt">Português</a></li>
+      <li><a href="../de/" lang="de" hreflang="de">Deutsch</a></li>
+      <li><a href="../ar/" lang="ar" hreflang="ar">العربية</a></li>
+      <li><a href="../da/" lang="da" hreflang="da">Dansk</a></li>
+      <li><a href="../it/" lang="it" hreflang="it">Italiano</a></li>
+      <li><a href="../ja/" lang="ja" hreflang="ja" class="current" aria-current="true">日本語</a></li>
+      <li><a href="../zh/" lang="zh" hreflang="zh">中文</a></li>
+    </ul>
+  </details>
+  <button class="nav-burger" id="burger" aria-label="メニューを開閉" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-media" aria-hidden="true">
+    <!--
+      FINAL VIDEO SLOT — when the looping land-bridge animation is finished,
+      uncomment this tag (drop the file at assets/hero-landbridge.mp4) and the
+      animated still below it becomes the poster/fallback automatically.
+
+    <video autoplay muted loop playsinline poster="../assets/hero-earth.jpg">
+      <source src="../assets/hero-landbridge.mp4" type="video/mp4">
+    </video>
+    -->
+    <img src="../assets/hero-earth.jpg" alt="" width="2048" height="1150" fetchpriority="high" decoding="async">
+  </div>
+  <div class="hero-stars" id="stars" aria-hidden="true"></div>
+  <div class="hero-aurora" aria-hidden="true"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">シラー研究所</span>
+    <h1 id="heroTitle">国際青年運動：<em>思想の力</em>で世界を変えよう</h1>
+    <p class="hero-sub">文明の次のパラダイムを築く、世界中の若者たちの運動 — 開発による平和と、人間精神の創造力。</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#signup">運動に参加する</a>
+      <a class="btn btn-ghost" href="#call">呼びかけを読む ↓</a>
+    </div>
+  </div>
+
+  <!-- <span class="hero-note">⬡ placeholder — final looping land-bridge animation in production</span> -->
+  <a class="scroll-cue" href="#call" aria-label="本文へスクロール">▾</a>
+</header>
+
+<!-- ============ A. CALL TO ACTION ============ -->
+<section id="call" class="sec dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">A</span> 行動の呼びかけ</span>
+      <h2>世界の若者たちへ — 今こそ、あなたの時代</h2>
+    </div>
+    <div class="call-grid">
+      <div class="reveal">
+        <blockquote class="call-quote">
+          <span class="tbd" title="仮テキスト — 行動の呼びかけの最終文面待ち">歴史とは、あなたに降りかかるものではなく、あなたが作るものです。私たちは、あらゆる大陸の若者に呼びかけます。日々の危機の先に目を向け、主権国家からなる世界、共有される開発、そして止められない人間の創造力の世界を、私たちと共に築こうと。</span>
+        </blockquote>
+        <div class="call-byline">
+          <span class="avatar" aria-hidden="true"><img src="../assets/helga-zepp-larouche-in-china.jpg" alt="中国でのヘルガ・ツェップ＝ラルーシュ" width="52" height="52" class="helga-avatar"></span>
+          <span class="who">
+            ヘルガ・ツェップ＝ラルーシュ
+            <small>シラー研究所 創設者</small>
+          </span>
+        </div>
+      </div>
+      <div class="call-side">
+        <div class="call-stat reveal" data-delay="1"><b>6つの大陸</b><span>で青年運動が今日組織されています</span></div>
+        <div class="call-stat reveal" data-delay="2"><b>1つの人類</b><span>地政学に分断されるのではなく、思想の力で結ばれています</span></div>
+        <div class="call-stat reveal" data-delay="3">
+          <a class="btn btn-gold" href="#signup" style="align-self:flex-start">呼びかけに応える →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ B. FROM LYNDON LAROUCHE ============ -->
+<section id="larouche" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">B</span> リンドン・ラルーシュより</span>
+      <h2>普遍史の視点から見たアフリカの現在の危機</h2>
+      <p class="sec-lede">1997年4月26日、ドイツ・ヴァルフで開かれたシラー研究所会議「アフリカ大湖地域における開発による平和」でリンドン・H・ラルーシュ・ジュニアが行った講演の抜粋。初出は<em>EIR</em>誌第24巻第22号、1997年5月23日。</p>
+    </div>
+
+    <div class="narrow">
+      <figure class="art-fig reveal">
+        <img src="../assets/larouche-walluf-1997.jpg" width="756" height="494" loading="lazy" decoding="async" alt="1997年、ドイツ・ヴァルフのシラー研究所会議でアフリカの外交官や来賓を前に講演するリンドン・ラルーシュ">
+        <figcaption>シラー研究所会議「アフリカ大湖地域における開発による平和」でアフリカの外交官と来賓に語りかけるリンドン・ラルーシュ。ドイツ・ヴァルフ、1997年4月26日。<em>EIRNS／クリストファー・ルイス</em></figcaption>
+      </figure>
+
+      <div class="article">
+        <p class="reveal">私はこれらのテーマの多くに関心を持ち、本日議論される話題の多くに関わっていますが、他の誰も取り上げないであろう唯一のテーマ、すなわちアフリカの状況を規定している世界の状況について語るのが、より適切だと考えました。</p>
+
+        <p class="reveal">さて、しばしの間アフリカ人であることをやめて、山の頂に登っていただきたい。そこからは、この惑星の人口の広がりを遠くまで見渡すことができ、また数百年にわたるその過去をも見通すことができます。そして、私たちが置かれている状況を見てください。たまたまあなたが暮らしているこの惑星を見下ろしながら、しばらく山頂にとどまり、こう問うてください。世界全体で、いったい何が起きているのか、と。</p>
+
+        <!-- <figure class="art-fig reveal">
+          <div class="ph ar-21x9">
+            <span class="ph-ar">21:9</span>
+            <span class="ph-ico">🖼</span>
+            <span class="ph-label">Image placeholder</span>
+            <span class="ph-note">Wide archival image — e.g. conference panorama or Great Lakes region development map</span>
+          </div>
+          <figcaption>Caption placeholder — credit line to follow.</figcaption>
+        </figure> -->
+
+        <p class="reveal">世界で起きていることに照らして、アフリカとその発展、そして今日の苦しみを見てみましょう。そこに見えるのは、この惑星文明が<em>崩壊しつつある</em>という事実です！</p>
+
+        <p class="reveal">私たちは、人類史上最大の世界的金融崩壊の瀬戸際に — 実際にはその渦中に — います。おそらく中国を例外として、あらゆる国の通貨制度が、ある朝突然崩壊しうる地点に達しているのです。つまり、金融投機の連鎖反応が起これば、48〜72時間のうちに、この惑星上のすべての通貨、すべての銀行が消滅しかねません。すべてが凍結し、崩壊のために貨幣が流通しなくなるからです。それは起こりうることなのです。</p>
+      </div>
+
+      <div class="art-cols reveal">
+        <figure class="art-fig">
+          <img src="../assets/fdr-liberia-1943.jpg" width="737" height="500" loading="lazy" decoding="async" alt="1943年、リベリアで部隊を閲兵するフランクリン・D・ルーズベルト">
+          <figcaption>リベリアのフランクリン・ルーズベルト大統領、1943年 — 同じ<em>EIR</em>記事より。</figcaption>
+        </figure>
+        <figure class="art-fig">
+          <img src="../assets/binaisa-godfrey.jpg" width="756" height="422" loading="lazy" decoding="async" alt="ウガンダ元大統領ゴッドフリー・ビナイサ">
+          <figcaption>ウガンダ元大統領ゴッドフリー・ビナイサ — 同じ<em>EIR</em>記事より。</figcaption>
+        </figure>
+      </div>
+
+      <div class="read-more reveal">
+        <span><b>続きを読む —</b> 講演の全文は、思想の生き物としての人間の本性と、普遍史におけるアフリカの位置を描き出しています。</span>
+        <a class="btn btn-green" href="https://larouchepub.com/lar/2026/5322-viewing_africa_s_current_crisi-lar.html" target="_blank" rel="noopener">講演全文を読む ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ C. FROM HELGA LAROUCHE ============ -->
+<section id="helga" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">C</span> ヘルガ・ラルーシュより</span>
+      <h2>新しい国際安全保障・開発アーキテクチャの十原則</h2>
+      <p class="sec-lede">シラー研究所創設者ヘルガ・ツェップ＝ラルーシュが2022年11月30日に提唱。各原則をクリックすると読めます。</p>
+    </div>
+
+    <div class="helga-grid">
+      <div class="helga-portrait reveal">
+        <div class="helga-card">
+          <div class="helga-photo ar-3x4">
+            <img src="../assets/helga-zepp-larouche-answers.jpg" alt="ヘルガ・ツェップ＝ラルーシュの肖像" class="helga-image" width="868" height="768" loading="lazy" decoding="async">
+          </div>
+          <div class="meta">
+            <b>ヘルガ・ツェップ＝ラルーシュ</b>
+            <span>シラー研究所 創設者</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="principles reveal">
+        <details class="principle" open>
+          <summary>主権国家と平和共存 <span class="chev">▾</span></summary>
+          <div class="body">新しい国際安全保障・開発アーキテクチャは、平和共存五原則と国連憲章に基づく、完全な主権国家間のパートナーシップでなければなりません。</div>
+        </details>
+        <details class="principle">
+          <summary>あらゆる国で貧困をなくす <span class="chev">▾</span></summary>
+          <div class="body">絶対的な優先課題は、地球上のあらゆる国で貧困を軽減することです — 既存の技術を公共の利益のために使えば、容易に可能です。</div>
+        </details>
+        <details class="principle">
+          <summary>すべての国に現代的な医療制度を <span class="chev">▾</span></summary>
+          <div class="body">地球上のすべての国に現代的な医療制度を築くことで、生きるすべての人の平均寿命を最大限にまで延ばさなければなりません。</div>
+        </details>
+        <details class="principle">
+          <summary>すべての子どもと大人に普遍的な教育を <span class="chev">▾</span></summary>
+          <div class="body">新しいアーキテクチャの主要目標のひとつは、すべての子どもとすべての大人に普遍的な教育へのアクセスを提供し、万人の創造的潜在力を開花させることです。</div>
+        </details>
+        <details class="principle">
+          <summary>人類に奉仕する金融システム <span class="chev">▾</span></summary>
+          <div class="body">国際金融システムは、これらの目標を達成するための生産的信用を供給できるよう、再編されなければなりません。</div>
+        </details>
+        <details class="principle">
+          <summary>全大陸を結ぶ世界ランドブリッジ <span class="chev">▾</span></summary>
+          <div class="body">新しい経済秩序は、全大陸のインフラ開発から始めて、現代的な産業と農業の条件を作り出すことに重点を置かなければなりません — やがてトンネルと橋で結ばれ、<em>世界ランドブリッジ</em>となるのです。</div>
+        </details>
+        <details class="principle">
+          <summary>地政学の終焉 — ブロックへの分断をなくす <span class="chev">▾</span></summary>
+          <div class="body">新しい世界安全保障アーキテクチャは、世界のブロック分割を終わらせることで、地政学という概念そのものをなくさなければなりません。</div>
+        </details>
+        <details class="principle">
+          <summary>一つの人類、一つの船 <span class="chev">▾</span></summary>
+          <div class="body">核兵器、パンデミック、インターネットその他の地球規模の影響により、人類は史上初めて同じ一つの船に乗っています。私たちの課題は、共にでなければ解決できません。</div>
+        </details>
+        <details class="principle">
+          <summary>物理的宇宙との調和のなかで <span class="chev">▾</span></summary>
+          <div class="body">経済・社会・政治の秩序は、物理的宇宙の法則性と調和したものにしなければなりません。</div>
+        </details>
+        <details class="principle">
+          <summary>人間は本来善である <span class="chev">▾</span></summary>
+          <div class="body">人間は本来善であり、その精神の創造性と魂の美しさを限りなく完成させることができます — 宇宙で最も進んだ地質学的な力なのです。</div>
+        </details>
+        <p style="font-size:12.5px;color:var(--ink-soft);margin-top:14px">
+          全文： <a href="https://schillerinstitute.com/blog/2022/11/30/ten-principles-of-a-new-international-security-and-development-architecture/" target="_blank" rel="noopener">十原則 — schillerinstitute.com ↗</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ D. WORLD LAND-BRIDGE ============ -->
+<section id="landbridge" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">D</span> 世界ランドブリッジ</span>
+      <h2>開発で結ばれた一つの惑星</h2>
+      <p class="sec-lede">1990年代初頭にリンドンとヘルガのラルーシュ夫妻が「開発による平和」という世界政策として構想 — 鉄道・水・エネルギーの回廊があらゆる大陸を結びます。<b>点滅するマーカーをクリック</b>して注目プロジェクトを見てみましょう。</p>
+    </div>
+
+    <div class="map-frame reveal" id="mapFrame">
+      <img src="../assets/landbridge-map.jpg" width="1170" height="774" loading="lazy" decoding="async" alt="世界ランドブリッジの地図。オアシス計画、トランスアクア、ベーリング海峡トンネル、中国の一帯一路、NAWAPA、チャンカイ港、二大洋回廊など、全大陸にわたる開発回廊の構想を示す">
+      <!-- pins injected by JS -->
+      <span class="map-hint"><span class="dot"></span> マーカーをクリックしてプロジェクトを見る</span>
+    </div>
+    <p class="map-src">地図（暫定）： <a href="https://gsmn.co.za/wp-content/uploads/2025/08/land-bridge_centerfold_asaka.jpg" target="_blank" rel="noopener">「世界ランドブリッジ」見開きページ</a> — ピンの位置は草案です。</p>
+
+    <!-- region tabs -->
+    <div class="tabs" role="tablist" aria-label="ランドブリッジの地域" id="tabs">
+      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="mideast" style="--sw:#d99a33"><span class="sw"></span>中東</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="africa" style="--sw:#2c8b8b"><span class="sw"></span>アフリカ</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="samerica" style="--sw:#c05b3f"><span class="sw"></span>南米</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="bronx" style="--sw:#2e6b4f"><span class="sw"></span>ブロンクス</button>
+    </div>
+
+    <!-- Middle East -->
+    <div class="panel active" id="panel-mideast" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">注目プロジェクト · 中東</p>
+          <h3>オアシス計画</h3>
+          <p>1975年にリンドン・ラルーシュが初めて提唱した、パレスチナとイスラエルのための50年開発構想。紙の条約ではなく、physical economy（実体経済）の上に築かれる平和 — 地域のすべての人々のための<b>水、エネルギー、交通</b>です。</p>
+          <ul class="facts">
+            <li>原子力による海水淡水化で、地政学が希少性を奪い合う地に豊かな真水を生み出す</li>
+            <li>新しい運河、鉄道回廊、開発都市が地域を世界ランドブリッジへとつなぐ</li>
+            <li>開発こそ恒久平和の真の基盤</li>
+          </ul>
+          <div class="doc-link">
+            <span class="ico">📄</span>
+            <span>
+              <a href="https://drive.google.com/file/d/1D4XW7X-kvOcxmigJcQqWTCKZwAojs8Wi/view?usp=sharing" target="_blank" rel="noopener">オアシス計画文書（PDF）↗</a>
+              <!-- <em style="opacity:.7"> — ⬡ full contents &amp; map to be integrated</em> -->
+            </span>
+          </div>
+        </div>
+        <div class="proj-media">
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="オアシス計画 — シラー研究所の動画" role="button" tabindex="0" aria-label="再生：オアシス計画。YouTubeから動画を読み込みます。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ クリックで再生 — 動画はYouTube（Google）から読み込まれます。<a href="../privacy.html">プライバシー</a></span>
+          </div>
+          <div class="project-map ar-4x3 map-align-top">
+            <img src="../assets/oasis-plan-00.png" alt="オアシス計画の地図">
+            <!-- <span class="ph-ar">4:3</span>
+            <span class="ph-ico">🗺</span>
+            <span class="ph-label">Oasis Plan regional map</span>
+            <span class="ph-note">Map from the source document — to be extracted and placed here</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Africa -->
+    <div class="panel" id="panel-africa" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">注目プロジェクト · アフリカ</p>
+          <h3>トランスアクア</h3>
+          <p><b>チャド湖を再び満たす</b>大プロジェクト — コンゴ川流域の水のごく一部を約2,400kmの可航運河で北へ送り、アフリカの中心部に水、エネルギー、交通をもたらします。</p>
+          <ul class="facts">
+            <li>12か国、約4,000万人に恩恵</li>
+            <li>内陸アフリカの可航水路の背骨：灌漑、水力発電、商業</li>
+            <li>縮小するチャド湖を再生 — 安全保障の危機を開発の原動力へ</li>
+          </ul>
+        </div>
+        <div class="proj-media">
+          <!-- demo video ID — swap data-yt-id/title/thumb for the real Transaqua video -->
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="トランスアクア（デモ動画）" role="button" tabindex="0" aria-label="再生：トランスアクア（デモ動画）。YouTubeから動画を読み込みます。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ クリックで再生 — 動画はYouTube（Google）から読み込まれます。<a href="../privacy.html">プライバシー</a></span>
+          </div>
+          <div class="ph ar-4x3">
+            <span class="ph-ar">4:3</span>
+            <span class="ph-ico">🗺</span>
+            <span class="ph-label">チャド湖流域の地図</span>
+            <span class="ph-note">地図またはインフォグラフィックのプレースホルダー</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S. America -->
+    <div class="panel" id="panel-samerica" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">注目プロジェクト · 南米</p>
+          <h3>チャンカイ港と二大洋回廊</h3>
+          <p><em style="font-size:13px;color:var(--ink-soft)">⬡ 草稿 — パンフレットの原文ではこのセクションは未定です。以下のプロジェクトは世界ランドブリッジ地図から採ったもので、差し替え可能です。</em></p>
+          <p>南米で最も水深の深いペルーのチャンカイ港が、太平洋岸とブラジルの大西洋岸を結ぶ<b>二大洋鉄道回廊</b>とつながります — 上海と南米の間の海上輸送時間を最大4分の1短縮し、大陸内陸部を開発へと開きます。</p>
+          <ul class="facts">
+            <li>8,000人超の直接雇用と、推定年間45億ドルの収益</li>
+            <li>鉄道の背骨が港の効果を大陸全体に波及させる</li>
+            <li>南米が世界ランドブリッジに加わる</li>
+          </ul>
+        </div>
+        <div class="proj-media">
+          <!-- demo video ID — swap data-yt-id/title/thumb for the real S. America video -->
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="チャンカイ港と二大洋回廊（デモ動画）" role="button" tabindex="0" aria-label="再生：チャンカイ港と二大洋回廊（デモ動画）。YouTubeから動画を読み込みます。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ クリックで再生 — 動画はYouTube（Google）から読み込まれます。<a href="../privacy.html">プライバシー</a></span>
+          </div>
+          <div class="ph ar-4x3">
+            <span class="ph-ar">4:3</span>
+            <span class="ph-ico">🗺</span>
+            <span class="ph-label">回廊の地図</span>
+            <span class="ph-note">地図またはインフォグラフィックのプレースホルダー</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bronx -->
+    <div class="panel" id="panel-bronx" role="tabpanel">
+      <div class="proj">
+        <div>
+          <p class="proj-sub">注目プロジェクト · ニューヨーク・ブロンクス</p>
+          <h3>開発は足元から始まる</h3>
+          <p><em style="font-size:13px;color:var(--ink-soft)">⬡ プレースホルダー — ブロンクスの注目プロジェクトは近日発表予定です。</em></p>
+          <p>世界ランドブリッジは遠い大陸だけの話ではありません — あらゆるコミュニティの使命です。ブロンクスのセクションでは、青年運動の地元での組織活動と、ニューヨークのための具体的な開発プロジェクトを紹介し、この街を世界へつなぎます。</p>
+          <ul class="facts">
+            <li>注目プロジェクトの本文は後日掲載</li>
+            <li>青年運動の地元での活動とイベント</li>
+            <li>現地での参加方法</li>
+          </ul>
+        </div>
+        <div class="proj-media">
+          <!-- demo video ID — swap data-yt-id/title/thumb for the real Bronx video -->
+          <div class="video-embed yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="ブロンクス — 注目プロジェクト（デモ動画）" role="button" tabindex="0" aria-label="再生：ブロンクス — 注目プロジェクト（デモ動画）。YouTubeから動画を読み込みます。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ クリックで再生 — 動画はYouTube（Google）から読み込まれます。<a href="../privacy.html">プライバシー</a></span>
+          </div>
+          <div class="ph ar-4x3">
+            <span class="ph-ar">4:3</span>
+            <span class="ph-ico">📷</span>
+            <span class="ph-label">地元の組織活動の写真</span>
+            <span class="ph-note">写真のプレースホルダー</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ E. MEET THE GLOBAL SOUTH ============ -->
+<section id="voices" class="sec dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">E</span> グローバル・サウスと出会う</span>
+      <h2>世界の多数派の声</h2>
+      <p class="sec-lede">グローバル・サウスの代表たち — 政治家、科学者、青年リーダー — へのビデオインタビューのシリーズ。シラー研究所のYouTubeチャンネルより。</p>
+    </div>
+
+    <div class="voice-grid">
+      <article class="voice-card reveal">
+        <div class="thumb">
+          <!-- demo video ID — swap data-yt-id/title/thumb per real interview -->
+          <div class="yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="インタビュー（デモ動画）" role="button" tabindex="0" aria-label="インタビューを再生。YouTubeから動画を読み込みます。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ クリックで再生 — 動画はYouTube（Google）から読み込まれます。<a href="../privacy.html">プライバシー</a></span>
+          </div>
+        </div>
+        <div class="vc-meta"><b>インタビュータイトル（仮）</b><span>氏名 · 国 — グローバル・サウス代表</span></div>
+      </article>
+      <article class="voice-card reveal" data-delay="1">
+        <div class="thumb">
+          <!-- demo video ID — swap data-yt-id/title/thumb per real interview -->
+          <div class="yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="インタビュー（デモ動画）" role="button" tabindex="0" aria-label="インタビューを再生。YouTubeから動画を読み込みます。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ クリックで再生 — 動画はYouTube（Google）から読み込まれます。<a href="../privacy.html">プライバシー</a></span>
+          </div>
+        </div>
+        <div class="vc-meta"><b>インタビュータイトル（仮）</b><span>氏名 · 国 — グローバル・サウス代表</span></div>
+      </article>
+      <article class="voice-card reveal" data-delay="2">
+        <div class="thumb">
+          <!-- demo video ID — swap data-yt-id/title/thumb per real interview -->
+          <div class="yt-facade" data-yt-id="VNoinK0TY7c" data-yt-title="インタビュー（デモ動画）" role="button" tabindex="0" aria-label="インタビューを再生。YouTubeから動画を読み込みます。">
+            <img src="../assets/yt-thumb-oasis.jpg" alt="" width="640" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"><i>▶</i></span>
+            <span class="yt-consent">▶ クリックで再生 — 動画はYouTube（Google）から読み込まれます。<a href="../privacy.html">プライバシー</a></span>
+          </div>
+        </div>
+        <div class="vc-meta"><b>インタビュータイトル（仮）</b><span>氏名 · 国 — グローバル・サウス代表</span></div>
+      </article>
+    </div>
+
+    <div class="voice-more reveal">
+      <a class="btn btn-gold" href="https://www.youtube.com/@SchillerInstitute" target="_blank" rel="noopener">YouTubeでその他のインタビューを見る ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ F. SIGN UP ============ -->
+<section id="signup" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag"><span class="badge">F</span> 参加する</span>
+      <h2>青年運動に参加しよう</h2>
+    </div>
+
+    <div class="highlight-card reveal">
+      <div class="hc-media">
+        <img class="hc-bg" src="../assets/yt-thumb-youth.jpg" alt="" loading="lazy" decoding="async">
+        <button class="hc-play js-highlights" type="button" aria-label="会議ハイライト動画を見る">
+          <i aria-hidden="true">▶</i>
+        </button>
+      </div>
+      <div class="hc-body">
+        <span class="hc-tag">ハイライト · 2025年12月</span>
+        <h3>国際オンライン青年会議<br>「世界の若者よ、団結せよ！」</h3>
+        <p>六大陸から若者たちがオンラインで集い、新しいパラダイムのための闘いに立ち上がりました。ハイライトを見て、次の一歩にあなたの席を。</p>
+        <div><button class="btn btn-gold js-highlights" type="button">ハイライトを見る ▶</button></div>
+      </div>
+    </div>
+
+    <div class="signup-grid">
+      <div class="signup-card reveal">
+        <span class="sc-ico">💬</span>
+        <h4>WhatsAppグループに参加</h4>
+        <p>世界中の青年運動オーガナイザーと直接つながりましょう。QRコードをスキャンするか、ボタンをタップしてください。</p>
+        <div class="qr__container">
+          <div class="ph ar-1x1 qr">
+            <span class="ph-ar">1:1</span>
+            <span class="ph-ico">▦</span>
+            <span class="ph-label">QRコード</span>
+            <span class="ph-note">WhatsAppグループのQR</span>
+          </div>
+
+        </div>
+        <a class="signup-btn btn btn-green js-draft" href="#">WhatsAppグループを開く</a>
+      </div>
+
+      <div class="signup-card reveal" data-delay="1">
+        <span class="sc-ico">📰</span>
+        <h4>EIR誌の無料購読</h4>
+        <p><em>Executive Intelligence Review</em> — リンドン・ラルーシュが創刊した週刊誌。無料購読を申し込み、運動を支える思想を学びましょう。</p>
+        <a class="signup-btn btn btn-green js-draft" href="#">無料で購読する</a>
+      </div>
+
+      <div class="signup-card reveal" data-delay="2">
+        <span class="sc-ico">✉️</span>
+        <h4>参加しよう</h4>
+        <p>メールアドレスを残していただければ、国際青年運動への参加について地元のオーガナイザーからご連絡します。</p>
+        <form class="signup-form">
+          <input type="email" required placeholder="your@email.org" aria-label="メールアドレス">
+          <label class="consent"><input type="checkbox" required> 青年運動に関する連絡のために、メールアドレスが保存されることに同意します。 <a href="../privacy.html">プライバシーポリシー</a></label>
+          <button class="signup-btn btn btn-green" type="submit">登録する</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <img src="../assets/si-logo-dark.png" alt="Schiller Institute" width="574" height="137" loading="lazy" decoding="async">
+      <div class="foot-links">
+        <a href="https://schillerinstitute.com/" target="_blank" rel="noopener">schillerinstitute.com</a>
+        <a href="https://www.youtube.com/@SchillerInstitute" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://larouchepub.com/" target="_blank" rel="noopener">EIR / larouchepub.com</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../impressum.html">法的表示</a>
+        <a href="#top">ページ上部へ ↑</a>
+      </div>
+    </div>
+    <div class="foot-langs" aria-label="言語">
+      <span class="fl-label" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3.6 9h16.8M3.6 15h16.8"/></svg></span>
+      <a href="../en/" lang="en" hreflang="en">English</a>
+      <a href="../es/" lang="es" hreflang="es">Español</a>
+      <a href="../fr/" lang="fr" hreflang="fr">Français</a>
+      <a href="../pt/" lang="pt" hreflang="pt">Português</a>
+      <a href="../de/" lang="de" hreflang="de">Deutsch</a>
+      <a href="../ar/" lang="ar" hreflang="ar">العربية</a>
+      <a href="../da/" lang="da" hreflang="da">Dansk</a>
+      <a href="../it/" lang="it" hreflang="it">Italiano</a>
+      <a href="../ja/" lang="ja" hreflang="ja" class="current" aria-current="true">日本語</a>
+      <a href="../zh/" lang="zh" hreflang="zh">中文</a>
+    </div>
+    <div class="foot-note">
+      <span>© <span id="yr"></span> シラー研究所 — 国際青年運動</span>
+      <!-- <span>⬡ Draft site — placeholder items marked with dashed outlines.</span> -->
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-wrap">
+    <div class="modal" id="modalBox">
+      <button class="m-close" id="modalClose" aria-label="閉じる">✕</button>
+      <div class="m-media" id="modalMedia"></div>
+      <div class="m-body">
+        <p class="m-region" id="modalRegion"></p>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+        <button class="btn btn-green" id="modalGo">このセクションを見る ↓</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="toast" id="toast">⬡ Draft — this link/form will be wired up when the final destination is supplied.</div> -->
+
+<script>window.I18N = {"js_consent_html":"▶ クリックで再生 — 動画はYouTube（Google）から読み込まれます。\u003ca href=\"../privacy.html\">プライバシー\u003c/a>","js_play_aria":"再生：{title}。YouTubeから動画を読み込みます。","js_yt_title":"YouTube動画","js_mideast_region":"中東","js_mideast_title":"オアシス計画","js_mideast_text":"ラルーシュによるパレスチナとイスラエルのための50年開発計画：原子力海水淡水化、水・交通・エネルギーの新インフラ — 物理的開発の上に築かれる平和。","js_africa_region":"アフリカ","js_africa_title":"トランスアクア","js_africa_text":"コンゴ川流域からの導水でチャド湖を再び満たす — 全長2,400kmの可航運河が12か国・約4,000万人に恩恵をもたらし、水力発電、灌漑、内陸航行を実現します。","js_samerica_region":"南米","js_samerica_title":"チャンカイ港と二大洋回廊","js_samerica_text":"南米最深の港が、ペルーとブラジルを横断する太平洋〜大西洋鉄道回廊と結ばれます — 8,000人超の直接雇用と、大陸を世界ランドブリッジへつなぐ玄関口。（暫定選定 — 最終プロジェクトは未定。）","js_bronx_region":"ブロンクス · ニューヨーク","js_bronx_title":"開発は足元から始まる","js_bronx_text":"青年運動の地元組織活動の拠点 — ブロンクスの注目開発プロジェクトは近日発表。マーカーがこの街を世界へつなぎます。","js_highlights_title":"国際オンライン青年会議 — 世界の若者よ、団結せよ！"};</script>
+<script src="../main.js"></script>
+</body>
+</html>

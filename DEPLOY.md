@@ -1,28 +1,25 @@
 # Deployment Guide
 
-A fully static site — upload everything in this folder (except `serve.sh` and this file,
-which are harmless but unnecessary) to any static host: Cloudflare Pages, Netlify,
-GitHub Pages, or classic hosting. **HTTPS is required** (YouTube embeds need a real
-HTTPS origin to play).
+A fully static, **10-language** site (see `BUILD.md` for how pages are generated) —
+run `node build.js`, then upload everything in this folder except `serve.sh`,
+`build.js`, `templates/`, `i18n/` and the `*.md` files (they are harmless but
+unnecessary) to any static host: Cloudflare Pages, Netlify, GitHub Pages, or classic
+hosting. **HTTPS is required** (YouTube embeds need a real HTTPS origin to play).
 
-## 1. When the domain is confirmed
+The root `/` auto-detects the browser language via JavaScript and redirects to
+`/en/ … /zh/` — no server configuration needed (see BUILD.md § auto-detection).
 
-Search & replace **`PLACEHOLDER-DOMAIN.example`** with the real domain (no trailing slash
-changes needed — occurrences include the scheme). It appears in:
+## 1. Domain
 
-| File | What it affects |
+Current canonical domain: **`https://youth.schillerinstitute.com`** (working decision,
+2026-07 — a subdomain of the parent org). If it changes:
+
+| File | What to do |
 |---|---|
-| `index.html` | canonical URL, Open Graph / Twitter URLs + social card image, JSON-LD |
-| `privacy.html` | canonical URL |
-| `impressum.html` | canonical URL |
-| `robots.txt` | sitemap pointer |
-| `sitemap.xml` | page URL |
-
-One-liner (run in the site folder):
-
-```sh
-grep -rl 'PLACEHOLDER-DOMAIN.example' . | xargs sed -i 's/PLACEHOLDER-DOMAIN.example/your-real-domain.org/g'
-```
+| `build.js` | change the `ORIGIN` constant, run `node build.js` (regenerates all canonical/hreflang/OG URLs and `sitemap.xml`) |
+| `robots.txt` | update the `Sitemap:` line |
+| `privacy.html` | update the canonical URL |
+| `impressum.html` | update the canonical URL |
 
 ## 2. Headers
 
@@ -43,8 +40,9 @@ On Apache/Nginx, port the same values to `.htaccess` / server config. Notes:
       honeypot field for spam if the service doesn't provide one.
 - [ ] Swap placeholder tiles (marked with dashed outlines) as final assets arrive.
 - [ ] Hero video: drop `assets/hero-landbridge.mp4`, uncomment the `<video>` tag in
-      `index.html`.
-- [ ] Update `sitemap.xml` `<lastmod>` when content changes meaningfully.
+      `templates/index.template.html`, rebuild.
+- [ ] Have native speakers review the machine-drafted translations in `i18n/`.
+- [ ] `sitemap.xml` `<lastmod>` updates automatically on every `node build.js`.
 
 ## 4. After launch (verification)
 

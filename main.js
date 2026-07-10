@@ -1,31 +1,42 @@
-/* ============ Featured projects: map pins + modal content ============ 
+/* ============ i18n ============
+ * Pages live at /<lang>/index.html; each one inlines its dictionary as
+ * window.I18N (built from the js_* keys of i18n/<lang>.json — see build.js).
+ * t() falls back to English so the script still works standalone. */
+const I18N = window.I18N || {};
+const t = (key, fallback) => (I18N[key] !== undefined ? I18N[key] : fallback);
+
+/* ============ Featured projects: map pins + modal content ============
  * Map pin positions: edit the PIN coordinates in the PROJECTS
  * object near the bottom of this file (values are % of map image).
  * Pin x/y are % of the map image — tune freely. */
 const PROJECTS = {
   mideast: {
-    x: 17.5, y: 54.3, color: "#d99a33", region: "Middle East",
-    title: "The Oasis Plan",
-    text: "LaRouche's fifty-year development plan for Palestine and Israel: nuclear-powered desalination, new water, transport and power infrastructure — peace built on physical development.",
-    media: { type: "video", id: "VNoinK0TY7c", thumb: "assets/yt-thumb-oasis.jpg" }
+    x: 17.5, y: 54.3, color: "#d99a33",
+    region: t("js_mideast_region", "Middle East"),
+    title: t("js_mideast_title", "The Oasis Plan"),
+    text: t("js_mideast_text", "LaRouche's fifty-year development plan for Palestine and Israel: nuclear-powered desalination, new water, transport and power infrastructure — peace built on physical development."),
+    media: { type: "video", id: "VNoinK0TY7c", thumb: "../assets/yt-thumb-oasis.jpg" }
   },
   africa: {
-    x: 14.5, y: 65, color: "#2c8b8b", region: "Africa",
-    title: "Transaqua",
-    text: "Water transfer from the Congo River basin to refill Lake Chad — a 2,400 km navigable canal benefiting some 40 million people across 12 nations, with hydropower, irrigation, and inland navigation.",
-    media: { type: "video", id: "VNoinK0TY7c", thumb: "assets/yt-thumb-oasis.jpg" } // demo ID
+    x: 14.5, y: 65, color: "#2c8b8b",
+    region: t("js_africa_region", "Africa"),
+    title: t("js_africa_title", "Transaqua"),
+    text: t("js_africa_text", "Water transfer from the Congo River basin to refill Lake Chad — a 2,400 km navigable canal benefiting some 40 million people across 12 nations, with hydropower, irrigation, and inland navigation."),
+    media: { type: "video", id: "VNoinK0TY7c", thumb: "../assets/yt-thumb-oasis.jpg" } // demo ID
   },
   samerica: {
-    x: 85.4, y: 65.2, color: "#c05b3f", region: "South America",
-    title: "Chancay Port & Bioceanic Corridor",
-    text: "The deepest-water port in South America joined to a Pacific–Atlantic rail corridor across Peru and Brazil — 8,000+ direct jobs and a gateway connecting the continent to the World Land-Bridge. (Draft selection — final featured project pending.)",
-    media: { type: "video", id: "VNoinK0TY7c", thumb: "assets/yt-thumb-oasis.jpg" } // demo ID
+    x: 85.4, y: 65.2, color: "#c05b3f",
+    region: t("js_samerica_region", "South America"),
+    title: t("js_samerica_title", "Chancay Port & Bioceanic Corridor"),
+    text: t("js_samerica_text", "The deepest-water port in South America joined to a Pacific–Atlantic rail corridor across Peru and Brazil — 8,000+ direct jobs and a gateway connecting the continent to the World Land-Bridge. (Draft selection — final featured project pending.)"),
+    media: { type: "video", id: "VNoinK0TY7c", thumb: "../assets/yt-thumb-oasis.jpg" } // demo ID
   },
   bronx: {
-    x: 85.2, y: 43.8, color: "#2e6b4f", region: "The Bronx · New York",
-    title: "Development Begins at Home",
-    text: "The youth movement's local organizing hub — the featured Bronx development project will be announced. This marker links the neighborhood to the world.",
-    media: { type: "video", id: "VNoinK0TY7c", thumb: "assets/yt-thumb-oasis.jpg" } // demo ID
+    x: 85.2, y: 43.8, color: "#2e6b4f",
+    region: t("js_bronx_region", "The Bronx · New York"),
+    title: t("js_bronx_title", "Development Begins at Home"),
+    text: t("js_bronx_text", "The youth movement's local organizing hub — the featured Bronx development project will be announced. This marker links the neighborhood to the world."),
+    media: { type: "video", id: "VNoinK0TY7c", thumb: "../assets/yt-thumb-oasis.jpg" } // demo ID
   }
 };
 
@@ -89,8 +100,8 @@ document.getElementById("modalGo").addEventListener("click", () => {
    facade itself is clicked. */
 const HIGHLIGHTS = {
   id: "40gKXu-rpm0",
-  title: "International Online Youth Conference — Young People of the World, Unite!",
-  thumb: "assets/yt-thumb-youth.jpg"
+  title: t("js_highlights_title", "International Online Youth Conference — Young People of the World, Unite!"),
+  thumb: "../assets/yt-thumb-youth.jpg"
 };
 function openVideoModal(v){
   currentKey = null;
@@ -208,8 +219,9 @@ function grantYtConsent(){
 }
 function ytFacadeHTML(id, title, thumb){
   const notice = hasYtConsent() ? "" :
-    `<span class="yt-consent">▶ Click to play — video loads from YouTube (Google). <a href="privacy.html">Privacy</a></span>`;
-  return `<div class="video-embed yt-facade" data-yt-id="${id}" data-yt-title="${title}" role="button" tabindex="0" aria-label="Play: ${title}. Loads the video from YouTube.">
+    `<span class="yt-consent">${t("js_consent_html", `▶ Click to play — video loads from YouTube (Google). <a href="../privacy.html">Privacy</a>`)}</span>`;
+  const playAria = t("js_play_aria", "Play: {title}. Loads the video from YouTube.").replace("{title}", title);
+  return `<div class="video-embed yt-facade" data-yt-id="${id}" data-yt-title="${title}" role="button" tabindex="0" aria-label="${playAria}">
     <img src="${thumb}" alt="" loading="lazy" decoding="async">
     <span class="yt-play" aria-hidden="true"><i>▶</i></span>
     ${notice}
@@ -217,7 +229,7 @@ function ytFacadeHTML(id, title, thumb){
 }
 function loadYt(facade){
   const id = facade.dataset.ytId;
-  const title = facade.dataset.ytTitle || "YouTube video";
+  const title = facade.dataset.ytTitle || t("js_yt_title", "YouTube video");
   const wrap = document.createElement("div");
   wrap.className = "video-embed";
   const iframe = document.createElement("iframe");
@@ -243,6 +255,7 @@ const toast = document.getElementById("toast");
 let toastTimer;
 function draftToast(e){
   e.preventDefault();
+  if(!toast) return; // toast element is currently commented out in the template
   toast.classList.add("show");
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove("show"), 3200);
@@ -254,3 +267,21 @@ document.querySelectorAll("form.signup-form").forEach(f => f.addEventListener("s
 
 /* returning visitor who already consented: show plain play buttons, no notices */
 if(hasYtConsent()) document.querySelectorAll(".yt-facade .yt-consent").forEach(n => n.remove());
+
+/* ---------- language switcher ----------
+   Remember an explicit choice so the root detector (/index.html) respects it
+   on the next visit instead of re-guessing from the browser language. */
+document.querySelectorAll(".lang-switch a, .foot-langs a").forEach(a => {
+  a.addEventListener("click", () => {
+    try { localStorage.setItem("site-lang", a.getAttribute("lang")); } catch(e){ /* private mode */ }
+  });
+});
+const langSwitch = document.getElementById("langSwitch");
+if(langSwitch){
+  document.addEventListener("click", e => {
+    if(langSwitch.open && !langSwitch.contains(e.target)) langSwitch.removeAttribute("open");
+  });
+  document.addEventListener("keydown", e => {
+    if(e.key === "Escape" && langSwitch.open) langSwitch.removeAttribute("open");
+  });
+}

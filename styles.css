@@ -52,7 +52,7 @@ a:hover{text-decoration:underline}
 .nav-logo .logo-light{display:none}
 .nav.solid .logo-light{display:block}
 .nav.solid .logo-dark{display:none}
-.nav-links{display:flex;gap:clamp(8px,1.6vw,22px);margin-left:auto;align-items:center}
+.nav-links{display:flex;gap:clamp(8px,1.6vw,22px);margin-inline-start:auto;align-items:center}
 .nav-links a{
   font-size:13.5px;font-weight:500;letter-spacing:.01em;color:#e8ecea;
   padding:6px 2px;border-bottom:2px solid transparent;transition:color .25s,border-color .25s;
@@ -68,21 +68,55 @@ a:hover{text-decoration:underline}
   transition:transform .2s, background .2s;
 }
 .nav-cta:hover{background:var(--gold-soft);transform:translateY(-1px)}
-.nav-burger{display:none;margin-left:auto;background:none;border:0;cursor:pointer;padding:8px}
+.nav-burger{display:none;margin-inline-start:12px;background:none;border:0;cursor:pointer;padding:8px}
 .nav-burger span{display:block;width:22px;height:2px;margin:5px 0;background:#fff;transition:all .3s}
 .nav.solid .nav-burger span{background:var(--ink)}
-@media(max-width:920px){
+/* ---------- language switcher (globe pill in the nav) ---------- */
+.lang-switch{position:relative;margin-inline-start:clamp(10px,1.4vw,20px);flex-shrink:0}
+.lang-switch summary{
+  list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+  font-size:12.5px;font-weight:600;letter-spacing:.04em;color:#e8ecea;
+  padding:7px 12px;border:1px solid rgba(255,255,255,.35);border-radius:999px;
+  white-space:nowrap;user-select:none;
+  transition:color .25s,border-color .25s,background .25s;
+}
+.lang-switch summary::-webkit-details-marker{display:none}
+.lang-switch summary:hover{color:var(--gold-soft);border-color:var(--gold-soft)}
+.nav.solid .lang-switch summary{color:var(--ink-soft);border-color:rgba(31,42,38,.3)}
+.nav.solid .lang-switch summary:hover{color:var(--green);border-color:var(--green)}
+.lang-switch .ls-globe{flex-shrink:0}
+.lang-switch .ls-caret{font-size:9px;opacity:.8;transition:transform .25s}
+.lang-switch[open] .ls-caret{transform:rotate(180deg)}
+/* burger breakpoint at 1140px: with 6 menu items + the language switcher the
+   desktop row only fits comfortably above ~1100px (in every language) */
+@media(max-width:1140px){
   .nav-links{
     position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:0;
     background:rgba(250,247,240,.98);backdrop-filter:blur(12px);
     box-shadow:0 20px 40px -20px rgba(0,0,0,.3);
     max-height:0;overflow:hidden;transition:max-height .4s ease;
   }
-  .nav-links.open{max-height:70vh}
+  .nav-links.open{max-height:70vh;overflow:auto}
   .nav-links a{color:var(--ink) !important;padding:14px 28px;border-bottom:1px solid var(--line)}
   .nav-cta{margin:14px 28px;text-align:center;border-radius:10px}
   .nav-burger{display:block}
+  .lang-switch{margin-inline-start:auto} /* nav-links leaves the flex flow → switcher takes over the spacer role */
 }
+.ls-menu{
+  position:absolute;top:calc(100% + 10px);inset-inline-end:0;z-index:120;
+  min-width:176px;max-height:min(72vh,480px);overflow:auto;
+  background:rgba(250,247,240,.98);backdrop-filter:blur(12px);
+  border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);
+  list-style:none;padding:8px;margin:0;
+  animation:panelIn .25s ease;
+}
+.ls-menu a{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:9px 12px;border-radius:9px;font-size:13.5px;font-weight:500;color:var(--ink);
+}
+.ls-menu a:hover{background:rgba(46,107,79,.08);text-decoration:none;color:var(--green-deep)}
+.ls-menu a.current{color:var(--green);font-weight:700;background:rgba(46,107,79,.07)}
+.ls-menu a.current::after{content:"✓";font-size:12px;color:var(--green)}
 
 /* ---------- HERO ---------- */
 .hero{
@@ -158,7 +192,7 @@ a:hover{text-decoration:underline}
 .btn-green:hover{background:var(--green-deep)}
 .signup-btn {justify-content:center;width: 100%;text-align:center;}
 .hero-note{
-  position:absolute;right:18px;bottom:16px;z-index:3;
+  position:absolute;inset-inline-end:18px;bottom:16px;z-index:3;
   font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.45);
   border:1px dashed rgba(255,255,255,.28);border-radius:8px;padding:5px 10px;
 }
@@ -223,7 +257,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 8px)}
 .ph .ph-label{font-weight:600;font-size:13.5px;letter-spacing:.02em}
 .ph .ph-note{font-size:11.5px;opacity:.75;max-width:300px}
 .ph .ph-ar{
-  position:absolute;top:10px;right:12px;font-size:10px;font-weight:700;letter-spacing:.1em;
+  position:absolute;top:10px;inset-inline-end:12px;font-size:10px;font-weight:700;letter-spacing:.1em;
   border:1px solid currentColor;border-radius:5px;padding:2px 7px;opacity:.55;
 }
 .ar-16x9{aspect-ratio:16/9}
@@ -243,10 +277,10 @@ section{scroll-margin-top:calc(var(--nav-h) + 8px)}
 @media(max-width:860px){.call-grid{grid-template-columns:1fr}}
 .call-quote{
   font-family:var(--serif-body);font-size:clamp(21px,2.8vw,31px);line-height:1.42;font-weight:500;
-  color:#f3f1e9;position:relative;padding-left:30px;
+  color:#f3f1e9;position:relative;padding-inline-start:30px;
 }
 .call-quote::before{
-  content:"“";position:absolute;left:-20px;top:-30px;font-size:110px;color:var(--gold);opacity:.5;line-height:1;
+  content:"“";position:absolute;inset-inline-start:-20px;top:-30px;font-size:110px;color:var(--gold);opacity:.5;line-height:1;
 }
 .call-quote .tbd{
   border-bottom:2px dotted rgba(232,180,92,.55);cursor:help;
@@ -271,7 +305,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 8px)}
 
 /* ---------- B. LAROUCHE ARTICLE ---------- */
 .article-kicker{
-  border-left:4px solid var(--gold);padding:6px 0 6px 22px;margin-bottom:42px;color:var(--ink-soft);font-size:14px;
+  border-inline-start:4px solid var(--gold);padding-block:6px;padding-inline:22px 0;margin-bottom:42px;color:var(--ink-soft);font-size:14px;
 }
 .article-kicker b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
 .article{font-family:var(--serif-body);font-size:clamp(17.5px,1.85vw,20.5px);line-height:1.74;color:#28322c}
@@ -280,13 +314,13 @@ section{scroll-margin-top:calc(var(--nav-h) + 8px)}
    NOTE: set in Cormorant, not EB Garamond — EB Garamond's capital A has a flat sheared
    apex by design, which reads as "cut off" at display sizes */
 .dropcap{
-  float:left;width:2.6rem;height:2.6rem;margin:5px 16px 2px 0;
+  float:inline-start;width:2.6rem;height:2.6rem;margin-block:5px 2px;margin-inline:0 16px;
   display:grid;place-items:center;
   font-family:var(--serif);font-size:2.1rem;line-height:1;font-weight:700;color:var(--green);
   background:rgba(46,107,79,.1);border-radius:10px;
 }
 @media(min-width:700px){
-  .dropcap{width:3.6rem;height:3.6rem;font-family:var(--serif);font-size:2.8rem;border-radius:12px;margin-right:18px}
+  .dropcap{width:3.6rem;height:3.6rem;font-family:var(--serif);font-size:2.8rem;border-radius:12px;margin-inline-end:18px}
 }
 .article em{color:var(--green-deep)}
 figure.art-fig{margin:44px 0}
@@ -338,10 +372,10 @@ figure.art-fig figcaption::before{content:"—";color:var(--gold);flex-shrink:0}
   background:rgba(46,107,79,.1);color:var(--green);transition:background .3s,color .3s;
 }
 .principle[open] summary::before{background:var(--green);color:#fff}
-.principle summary .chev{margin-left:auto;color:var(--green);transition:transform .3s;font-size:13px}
+.principle summary .chev{margin-inline-start:auto;color:var(--green);transition:transform .3s;font-size:13px}
 .principle[open] summary .chev{transform:rotate(180deg)}
-.principle .body{padding:0 22px 22px 80px;font-family:var(--serif-body);font-size:17px;line-height:1.68;color:#333f38}
-@media(max-width:560px){.principle .body{padding-left:22px}}
+.principle .body{padding-block:0 22px;padding-inline:80px 22px;font-family:var(--serif-body);font-size:17px;line-height:1.68;color:#333f38}
+@media(max-width:560px){.principle .body{padding-inline-start:22px}}
 .principle .body em{color:var(--green)}
 
 /* ---------- D. LAND-BRIDGE MAP ---------- */
@@ -379,12 +413,12 @@ figure.art-fig figcaption::before{content:"—";color:var(--gold);flex-shrink:0}
 .pin:hover .tip,.pin:focus-visible .tip{opacity:1;transform:translateX(-50%) translateY(0)}
 @keyframes pinPulse{0%{transform:scale(.5);opacity:.9}80%,100%{transform:scale(1.9);opacity:0}}
 @keyframes pinPulseSmall{0%,100%{opacity:1}50%{opacity:.35}}
-.map-src{font-size:12px;color:var(--ink-soft);margin-top:12px;text-align:right}
+.map-src{font-size:12px;color:var(--ink-soft);margin-top:12px;text-align:end}
 
 /* D tabs */
 .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:54px 0 30px}
 .tab-btn{
-  font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;
+  font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;
   padding:11px 22px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink-soft);
   transition:all .25s;display:inline-flex;align-items:center;gap:8px;
 }
@@ -521,7 +555,7 @@ figure.art-fig figcaption::before{content:"—";color:var(--gold);flex-shrink:0}
 .modal h3{font-family:var(--serif);font-size:30px;color:var(--green-dark);margin-bottom:12px;line-height:1.15}
 .modal p{font-size:15px;color:#3a463f;margin-bottom:20px}
 .modal .m-close{
-  position:absolute;top:14px;right:14px;z-index:5;width:38px;height:38px;border-radius:50%;border:0;cursor:pointer;
+  position:absolute;top:14px;inset-inline-end:14px;z-index:5;width:38px;height:38px;border-radius:50%;border:0;cursor:pointer;
   background:rgba(15,42,30,.8);color:#fff;font-size:17px;display:grid;place-items:center;transition:background .2s,transform .2s;
 }
 .modal .m-close:hover{background:var(--green-dark);transform:rotate(90deg)}
@@ -573,7 +607,7 @@ footer{background:var(--green-dark);color:rgba(240,240,232,.65);padding:56px 0 4
 .legal h1{font-family:var(--serif);color:var(--green-dark);font-size:clamp(30px,4vw,44px);margin-bottom:18px}
 .legal h2{font-family:var(--serif);color:var(--green-dark);font-size:24px;margin:36px 0 10px}
 .legal p,.legal li{font-size:15px;color:#3a463f;margin-bottom:12px}
-.legal ul{padding-left:22px}
+.legal ul{padding-inline-start:22px}
 .legal .back{display:inline-block;margin-bottom:28px;font-size:14px}
 .legal .tbd-block{border:1.5px dashed rgba(46,107,79,.5);border-radius:10px;padding:14px 18px;background:var(--paper-2);color:var(--ink-soft);font-size:14px;margin:10px 0}
 
@@ -581,3 +615,36 @@ footer{background:var(--green-dark);color:rgba(240,240,232,.65);padding:56px 0 4
 .thumb .yt-facade{position:absolute;inset:0;cursor:pointer}
 .thumb .video-embed{position:absolute;inset:0;aspect-ratio:auto;border-radius:0;box-shadow:none}
 .thumb .yt-play i{width:56px;height:56px;font-size:18px;padding-left:4px}
+
+/* ---------- footer language row ---------- */
+.foot-langs{
+  margin-top:30px;display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;
+  font-size:13px;
+}
+.foot-langs .fl-label{display:inline-flex;opacity:.55;color:rgba(240,240,232,.75)}
+.foot-langs a{color:rgba(240,240,232,.6)}
+.foot-langs a:hover{color:var(--gold-soft)}
+.foot-langs a.current{color:var(--gold-soft);font-weight:600;pointer-events:none}
+
+/* ---------- RTL (Arabic) ----------
+   Layout flips come free from dir="rtl" + the logical properties above;
+   the rules below cover what cannot flip automatically. */
+:root[dir="rtl"]{
+  /* the self-hosted Latin serifs have no Arabic glyphs — use widespread system
+     Arabic fonts (Windows/Android: Segoe UI/Noto, iOS/macOS: Geeza Pro) */
+  --serif:"Amiri","Noto Naskh Arabic","Geeza Pro","Traditional Arabic","Times New Roman",serif;
+  --serif-body:"Amiri","Noto Naskh Arabic","Geeza Pro","Traditional Arabic","Times New Roman",serif;
+  --sans:"Segoe UI","Noto Sans Arabic","Geeza Pro",Tahoma,Arial,sans-serif;
+}
+/* letter-spacing breaks the connected Arabic script */
+[dir="rtl"] .hero-eyebrow,[dir="rtl"] .sec-tag,[dir="rtl"] .proj-sub,[dir="rtl"] .hc-tag,
+[dir="rtl"] .m-region,[dir="rtl"] .hero-note,[dir="rtl"] .nav-links a,[dir="rtl"] .lang-switch summary{letter-spacing:0}
+/* decorative gradients drawn with physical angles */
+[dir="rtl"] .hero-eyebrow::before{background:linear-gradient(90deg,var(--gold-soft),transparent)}
+[dir="rtl"] .hero-eyebrow::after{background:linear-gradient(90deg,transparent,var(--gold-soft))}
+/* hover nudge direction */
+[dir="rtl"] .call-stat:hover{transform:translateX(-6px)}
+/* Arabic-Indic numerals on the ten principles */
+[dir="rtl"] .principle summary::before{content:counter(pr, arabic-indic)}
+/* opening quote mark of the call-to-action blockquote */
+[dir="rtl"] .call-quote::before{content:"”"}
