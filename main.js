@@ -5,6 +5,14 @@
 const I18N = window.I18N || {};
 const t = (key, fallback) => (I18N[key] !== undefined ? I18N[key] : fallback);
 
+/* Pages live at /<lang>/ (one level deep) or /v2/<lang>/ (two levels, preview build).
+ * Resolve shared root files relative to this script's own src ("../main.js" or
+ * "../../main.js") so runtime-injected media works at either depth. */
+const ASSET_ROOT = (() => {
+  const s = document.querySelector('script[src$="main.js"]');
+  return s ? s.getAttribute("src").replace(/main\.js$/, "") : "../";
+})();
+
 /* ============ Featured projects: map pins + modal content ============
  * Map pin positions: edit the PIN coordinates in the PROJECTS
  * object near the bottom of this file (values are % of map image).
@@ -15,28 +23,28 @@ const PROJECTS = {
     region: t("js_mideast_region", "Middle East"),
     title: t("js_mideast_title", "The Oasis Plan"),
     text: t("js_mideast_text", "LaRouche's fifty-year development plan for Palestine and Israel: nuclear-powered desalination, new water, transport and power infrastructure — peace built on physical development."),
-    media: { type: "video", id: "VNoinK0TY7c", thumb: "../assets/yt-thumb-oasis.jpg" }
+    media: { type: "video", id: "VNoinK0TY7c", thumb: ASSET_ROOT + "assets/yt-thumb-oasis.jpg" }
   },
   africa: {
     x: 14.5, y: 65, color: "#2c8b8b",
     region: t("js_africa_region", "Africa"),
     title: t("js_africa_title", "Transaqua"),
     text: t("js_africa_text", "Water transfer from the Congo River basin to refill Lake Chad — a 2,400 km navigable canal benefiting some 40 million people across 12 nations, with hydropower, irrigation, and inland navigation."),
-    media: { type: "video", id: "VNoinK0TY7c", thumb: "../assets/yt-thumb-oasis.jpg" } // demo ID
+    media: { type: "video", id: "VNoinK0TY7c", thumb: ASSET_ROOT + "assets/yt-thumb-oasis.jpg" } // demo ID
   },
   samerica: {
     x: 85.4, y: 65.2, color: "#c05b3f",
     region: t("js_samerica_region", "South America"),
     title: t("js_samerica_title", "Chancay Port & Bioceanic Corridor"),
     text: t("js_samerica_text", "The deepest-water port in South America joined to a Pacific–Atlantic rail corridor across Peru and Brazil — 8,000+ direct jobs and a gateway connecting the continent to the World Land-Bridge. (Draft selection — final featured project pending.)"),
-    media: { type: "video", id: "VNoinK0TY7c", thumb: "../assets/yt-thumb-oasis.jpg" } // demo ID
+    media: { type: "video", id: "VNoinK0TY7c", thumb: ASSET_ROOT + "assets/yt-thumb-oasis.jpg" } // demo ID
   },
   bronx: {
     x: 85.2, y: 43.8, color: "#2e6b4f",
     region: t("js_bronx_region", "The Bronx · New York"),
     title: t("js_bronx_title", "Development Begins at Home"),
     text: t("js_bronx_text", "The youth movement's local organizing hub — the featured Bronx development project will be announced. This marker links the neighborhood to the world."),
-    media: { type: "video", id: "VNoinK0TY7c", thumb: "../assets/yt-thumb-oasis.jpg" } // demo ID
+    media: { type: "video", id: "VNoinK0TY7c", thumb: ASSET_ROOT + "assets/yt-thumb-oasis.jpg" } // demo ID
   }
 };
 
@@ -101,7 +109,7 @@ document.getElementById("modalGo").addEventListener("click", () => {
 const HIGHLIGHTS = {
   id: "40gKXu-rpm0",
   title: t("js_highlights_title", "International Online Youth Conference — Young People of the World, Unite!"),
-  thumb: "../assets/yt-thumb-youth.jpg"
+  thumb: ASSET_ROOT + "assets/yt-thumb-youth.jpg"
 };
 function openVideoModal(v){
   currentKey = null;
@@ -203,23 +211,29 @@ if(reduceMotion) document.querySelectorAll(".reveal").forEach(el => el.classList
 
 /* ---------- misc ---------- */
 document.getElementById("yr").textContent = new Date().getFullYear();
-/* ---------- YouTube consent facade (GDPR two-click) ----------
+/* ---------- video consent facades (GDPR two-click) ----------
    No request goes to Google until the visitor clicks a facade. The first click counts
-   as consent for YouTube embeds site-wide: the consent notices disappear from all other
-   facades, and the choice is remembered in localStorage. Storing the visitor's own
-   consent decision is "strictly necessary" under the ePrivacy rules, so it needs no
-   consent of its own — and it is not a cookie (nothing is sent to any server). */
-const YT_CONSENT_KEY = "yt-embed-consent";
-function hasYtConsent(){
-  try { return localStorage.getItem(YT_CONSENT_KEY) === "granted"; } catch(e){ return false; }
+   as consent for that provider's embeds site-wide: the consent notices disappear from
+   that provider's other facades, and the choice is remembered in localStorage. Storing
+   the visitor's own consent decision is "strictly necessary" under the ePrivacy rules,
+   so it needs no consent of its own — and it is not a cookie (nothing is sent to any
+   server). Providers: YouTube (data-yt-id) and Google Drive (data-embed-src). */
+const CONSENT_KEYS = { yt: "yt-embed-consent", drive: "drive-embed-consent" };
+const providerOf = (facade) => facade.dataset.embedSrc ? "drive" : "yt";
+function hasConsent(provider){
+  try { return localStorage.getItem(CONSENT_KEYS[provider]) === "granted"; } catch(e){ return false; }
 }
-function grantYtConsent(){
-  try { localStorage.setItem(YT_CONSENT_KEY, "granted"); } catch(e){ /* private mode etc. — session-only */ }
-  document.querySelectorAll(".yt-facade .yt-consent").forEach(n => n.remove());
+function grantConsent(provider){
+  try { localStorage.setItem(CONSENT_KEYS[provider], "granted"); } catch(e){ /* private mode etc. — session-only */ }
+  document.querySelectorAll(".yt-facade").forEach(f => {
+    if(providerOf(f) !== provider) return;
+    const n = f.querySelector(".yt-consent");
+    if(n) n.remove();
+  });
 }
 function ytFacadeHTML(id, title, thumb){
-  const notice = hasYtConsent() ? "" :
-    `<span class="yt-consent">${t("js_consent_html", `▶ Click to play — video loads from YouTube (Google). <a href="../privacy.html">Privacy</a>`)}</span>`;
+  const notice = hasConsent("yt") ? "" :
+    `<span class="yt-consent">${t("js_consent_html", `▶ Click to play — video loads from YouTube (Google). <a href="${ASSET_ROOT}privacy.html">Privacy</a>`)}</span>`;
   const playAria = t("js_play_aria", "Play: {title}. Loads the video from YouTube.").replace("{title}", title);
   return `<div class="video-embed yt-facade" data-yt-id="${id}" data-yt-title="${title}" role="button" tabindex="0" aria-label="${playAria}">
     <img src="${thumb}" alt="" loading="lazy" decoding="async">
@@ -228,18 +242,20 @@ function ytFacadeHTML(id, title, thumb){
   </div>`;
 }
 function loadYt(facade){
-  const id = facade.dataset.ytId;
+  const provider = providerOf(facade);
   const title = facade.dataset.ytTitle || t("js_yt_title", "YouTube video");
   const wrap = document.createElement("div");
   wrap.className = "video-embed";
   const iframe = document.createElement("iframe");
-  iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1`;
+  iframe.src = provider === "drive"
+    ? facade.dataset.embedSrc // Google Drive player URL (…/preview), stated in the markup
+    : `https://www.youtube-nocookie.com/embed/${encodeURIComponent(facade.dataset.ytId)}?autoplay=1`;
   iframe.title = title;
   iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
   iframe.allowFullscreen = true;
   wrap.appendChild(iframe);
   facade.replaceWith(wrap);
-  grantYtConsent();
+  grantConsent(provider);
 }
 document.addEventListener("click", e => {
   const f = e.target.closest(".yt-facade");
@@ -266,7 +282,7 @@ document.querySelectorAll(".js-draft").forEach(el => el.addEventListener("click"
 document.querySelectorAll("form.signup-form").forEach(f => f.addEventListener("submit", draftToast));
 
 /* returning visitor who already consented: show plain play buttons, no notices */
-if(hasYtConsent()) document.querySelectorAll(".yt-facade .yt-consent").forEach(n => n.remove());
+Object.keys(CONSENT_KEYS).forEach(p => { if(hasConsent(p)) grantConsent(p); });
 
 /* ---------- language switcher ----------
    Remember an explicit choice so the root detector (/index.html) respects it

@@ -5,7 +5,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
-  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; frame-src https://www.youtube-nocookie.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; frame-src https://www.youtube-nocookie.com https://drive.google.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests
 
 # HTML/CSS/JS are not content-hashed — revalidate so updates reach visitors
 /index.html
@@ -37,6 +37,11 @@
   Cache-Control: public, max-age=0, must-revalidate
 /zh/*
   Cache-Control: public, max-age=0, must-revalidate
+
+# v2 preview of the redesigned Sign-Up section — never index, always revalidate
+/v2/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
 
 # fonts never change
 /assets/fonts/*

@@ -648,3 +648,78 @@ footer{background:var(--green-dark);color:rgba(240,240,232,.65);padding:56px 0 4
 [dir="rtl"] .principle summary::before{content:counter(pr, arabic-indic)}
 /* opening quote mark of the call-to-action blockquote */
 [dir="rtl"] .call-quote::before{content:"”"}
+
+/* ---------- F. SIGN UP — v2 tiered layout (only used by the /v2/ preview pages;
+   harmless to the current pages, which never emit these classes) ---------- */
+/* tier 1 — primary entry point (NationBuilder sign-up) */
+.signup-primary{
+  position:relative;overflow:hidden;display:grid;grid-template-columns:1.55fr 1fr;align-items:center;
+  gap:clamp(24px,4vw,56px);padding:clamp(30px,4.5vw,54px) clamp(26px,4vw,56px);
+  border-radius:20px;margin-bottom:24px;
+  background:linear-gradient(118deg,var(--green-dark) 0%,var(--green-deep) 58%,#1f5137 100%);
+  box-shadow:var(--shadow-lg);
+}
+.signup-primary::before{ /* gold spine — marks the primary option */
+  content:"";position:absolute;inset-block:0;inset-inline-start:0;width:7px;
+  background:linear-gradient(180deg,var(--gold),var(--gold-soft));
+}
+.signup-primary::after{ /* soft glow behind the CTA */
+  content:"";position:absolute;inset-inline-end:-120px;top:-130px;width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,154,51,.22),transparent 70%);pointer-events:none;
+}
+.signup-primary h3{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.2vw,40px);line-height:1.12;color:#f3f1e9;margin-bottom:12px}
+.signup-primary p{font-size:15px;color:rgba(240,240,232,.75);max-width:58ch}
+.sp-cta{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:12px;justify-self:center}
+.sp-btn{font-size:16.5px;padding:16px 44px}
+.sp-note{font-size:12px;color:rgba(240,240,232,.55);text-align:center;max-width:250px;line-height:1.5}
+@media(max-width:840px){
+  .signup-primary{grid-template-columns:1fr}
+  .sp-cta{justify-self:start;align-items:flex-start}
+  .sp-note{text-align:start}
+}
+
+/* tier 2 — secondary entry points */
+.signup-tier2{display:grid;gap:24px}
+.yt-facade[role="button"]{cursor:pointer}
+
+/* Learn more (EIR) */
+.eir-card{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,3.5vw,48px);align-items:center}
+@media(max-width:840px){.eir-card{grid-template-columns:1fr}}
+.eir-card:hover{transform:none} /* horizontal band — the lift-on-hover of .signup-card looks jumpy here */
+.eir-body{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.eir-card .eir-body p{flex-grow:0}
+
+/* Contact us (coordinators) */
+.contact-card{gap:22px}
+.contact-card:hover{transform:none}
+.contact-head{display:flex;gap:18px;align-items:flex-start}
+.contact-head .sc-ico{flex-shrink:0}
+.contact-head p{font-size:14px;color:var(--ink-soft);margin-top:6px}
+.coord-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.coord-grid{grid-template-columns:1fr}}
+.coord{
+  display:flex;flex-direction:column;gap:10px;align-items:flex-start;
+  background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 22px;
+}
+.coord--tba{border-style:dashed;border-color:rgba(46,107,79,.45)}
+.coord-lang{
+  font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green);
+  background:rgba(46,107,79,.12);border-radius:999px;padding:3px 11px;
+}
+.coord-name{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--green-dark);line-height:1.2;margin-top:2px}
+.coord-role{font-size:12.5px;color:var(--ink-soft);line-height:1.55;flex-grow:1}
+.btn-li{ /* LinkedIn's official button blue, in the site's pill shape */
+  display:inline-flex;align-items:center;gap:8px;
+  background:#0a66c2;color:#fff;font-weight:600;font-size:13px;
+  padding:9px 19px;border-radius:999px;transition:background .2s,transform .2s;
+}
+.btn-li:hover{background:#084f96;color:#fff;text-decoration:none;transform:translateY(-2px)}
+.btn-li svg{flex-shrink:0}
+.btn-li--ph{background:var(--paper-2);color:var(--ink-soft);border:1.5px dashed rgba(46,107,79,.5)}
+.coord-qr{width:132px;align-self:center;margin-top:6px}
+.coord-qr .ph{padding:12px;gap:5px}
+.coord-qr .ph .ph-label{font-size:12px}
+.coord-qr .ph .ph-note{font-size:10px}
+
+/* RTL: letter-spacing breaks connected Arabic script (see the RTL section above) */
+[dir="rtl"] .coord-lang{letter-spacing:0}

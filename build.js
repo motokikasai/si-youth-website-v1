@@ -55,6 +55,11 @@ function hreflangLinks() {
 /* ---- load inputs --------------------------------------------------- */
 const template = read("templates/index.template.html");
 const redirectTemplate = read("templates/redirect.template.html");
+// Optional v2 preview of the redesigned Sign-Up section: if the v2 template
+// exists it is additionally rendered to /v2/<lang>/ (noindex, not in the
+// sitemap) so old and new can be compared side by side. See BUILD.md.
+const V2_TEMPLATE = "templates/index.template.v2.html";
+const templateV2 = fs.existsSync(path.join(ROOT, V2_TEMPLATE)) ? read(V2_TEMPLATE) : null;
 const dicts = {};
 for (const lang of LANGS) {
   dicts[lang] = JSON.parse(read(`i18n/${lang}.json`));
@@ -62,7 +67,7 @@ for (const lang of LANGS) {
 
 /* ---- per-language pages -------------------------------------------- */
 const templateKeys = new Set(
-  [...template.matchAll(/\{\{(\w+)\}\}/g)].map((m) => m[1])
+  [...(template + (templateV2 || "")).matchAll(/\{\{(\w+)\}\}/g)].map((m) => m[1])
 );
 const computedKeys = new Set([
   "lang", "dir", "origin", "lang_upper", "lang_native", "lang_label",
@@ -109,6 +114,19 @@ for (const lang of LANGS) {
 
   fs.mkdirSync(path.join(ROOT, lang), { recursive: true });
   write(`${lang}/index.html`, render(template, vars, `${lang}/index.html`));
+
+  if (templateV2) {
+    // v2 pages sit one level deeper (/v2/<lang>/). The v2 template already uses
+    // ../../ itself; dictionary strings, however, reference root files as ../
+    // (correct for /<lang>/) — bump only those. Language links (../es/ …) must
+    // stay untouched: relative to /v2/en/ they correctly stay inside /v2/.
+    const html = render(templateV2, vars, `v2/${lang}/index.html`).replace(
+      /(["'(]|\\")\.\.\/(assets\/|styles\.css|main\.js|privacy\.html|impressum\.html)/g,
+      "$1../../$2"
+    );
+    fs.mkdirSync(path.join(ROOT, "v2", lang), { recursive: true });
+    write(`v2/${lang}/index.html`, html);
+  }
 }
 
 /* ---- root language detector ---------------------------------------- */
@@ -158,5 +176,6 @@ ${urls}
 );
 
 console.log(`✓ built ${LANGS.length} language pages (${LANGS.join(", ")})`);
+if (templateV2) console.log(`✓ built /v2/ preview pages (redesigned Sign-Up section, noindex)`);
 console.log(`✓ built index.html (root language detector) and sitemap.xml`);
 console.log(`  canonical origin: ${ORIGIN}`);

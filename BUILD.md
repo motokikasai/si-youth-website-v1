@@ -38,6 +38,21 @@ regenerated output together with your change.
 - `sitemap.xml` (all 10 URLs with alternates) and the root `index.html` are
   also generated on every build.
 
+## Section-F v2 preview (`/v2/`)
+
+`templates/index.template.v2.html` is a full variant of the main template with
+the **redesigned Sign-Up section** (NationBuilder sign-up as the primary tier;
+EIR subscription + coordinators as the secondary tier). While that file
+exists, `node build.js` additionally renders `/v2/<lang>/index.html` for every
+language — marked `noindex` and left out of the sitemap — so the current and
+new versions can be compared side by side (e.g. `/en/` vs `/v2/en/`).
+
+The v2 template references shared root files as `../../…`; dictionary strings
+that contain `../privacy.html`-style links are depth-bumped automatically by
+the build. Once v2 is approved: port its section F into
+`index.template.html`, delete the v2 template and the `/v2/` folders, and
+rebuild.
+
 ## Language auto-detection (root `/`)
 
 `/index.html` is a tiny detector page (noindex): it checks `localStorage`
