@@ -692,7 +692,7 @@ footer{background:var(--green-dark);color:rgba(240,240,232,.65);padding:56px 0 4
 /* Contact us (coordinators) */
 .contact-card{gap:22px}
 .contact-card:hover{transform:none}
-.contact-head{display:flex;gap:18px;align-items:flex-start}
+.contact-head{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
 .contact-head .sc-ico{flex-shrink:0}
 .contact-head p{font-size:14px;color:var(--ink-soft);margin-top:6px}
 .coord-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
