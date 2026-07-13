@@ -71,7 +71,7 @@ const templateKeys = new Set(
 );
 const computedKeys = new Set([
   "lang", "dir", "origin", "lang_upper", "lang_native", "lang_label",
-  "hreflang_links", "lang_menu", "footer_langs", "i18n_json",
+  "hreflang_links", "lang_menu", "footer_langs", "i18n_json", "i18n_json_v2",
 ]);
 
 for (const lang of LANGS) {
@@ -87,10 +87,14 @@ for (const lang of LANGS) {
     return `<a href="../${l}/" lang="${l}" hreflang="${l}"${current}>${dicts[l].lang_native}</a>`;
   }).join("\n      ");
 
-  // js_* keys are exposed to main.js as window.I18N
+  // js_* keys are exposed to main.js as window.I18N; the v2 preview pages
+  // (main.v2.js) additionally get the v2js_* keys — kept out of the v1
+  // dictionary so the live pages stay byte-identical.
   const jsStrings = {};
+  const jsStringsV2 = {};
   for (const key of Object.keys(dict)) {
     if (key.startsWith("js_")) jsStrings[key] = dict[key];
+    if (key.startsWith("js_") || key.startsWith("v2js_")) jsStringsV2[key] = dict[key];
   }
 
   const vars = {
@@ -102,11 +106,12 @@ for (const lang of LANGS) {
     lang_menu: langMenu,
     footer_langs: footerLangs,
     i18n_json: JSON.stringify(jsStrings).replace(/</g, "\\u003c"), // safe inside <script>
+    i18n_json_v2: JSON.stringify(jsStringsV2).replace(/</g, "\\u003c"),
   };
 
   // warn (don't fail) about dictionary keys the template never uses
   const unused = Object.keys(dict).filter(
-    (k) => !templateKeys.has(k) && !computedKeys.has(k) && !k.startsWith("js_")
+    (k) => !templateKeys.has(k) && !computedKeys.has(k) && !k.startsWith("js_") && !k.startsWith("v2js_")
   );
   if (unused.length) {
     console.warn(`⚠ ${lang}.json has unused key(s): ${unused.join(", ")}`);

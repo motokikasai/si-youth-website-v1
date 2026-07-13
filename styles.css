@@ -439,7 +439,7 @@ figure.art-fig figcaption::before{content:"—";color:var(--gold);flex-shrink:0}
   background:var(--paper-2);border-radius:10px;padding:12px 16px;border:1px solid var(--line);
 }
 .proj .facts li::before{content:"◆";color:var(--gold);font-size:11px;line-height:1.9}
-.video-embed{position:relative;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:16/9;background:#000}
+.video-embed{position:relative;overflow:hidden;aspect-ratio:16/9;background:#000}
 .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .proj-media{display:flex;flex-direction:column;gap:16px}
 .doc-link{
@@ -663,10 +663,11 @@ footer{background:var(--green-dark);color:rgba(240,240,232,.65);padding:56px 0 4
   content:"";position:absolute;inset-block:0;inset-inline-start:0;width:7px;
   background:linear-gradient(180deg,var(--gold),var(--gold-soft));
 }
-.signup-primary::after{ /* soft glow behind the CTA */
+/* soft glow behind the CTA */
+/* .signup-primary::after{ 
   content:"";position:absolute;inset-inline-end:-120px;top:-130px;width:360px;height:360px;border-radius:50%;
   background:radial-gradient(circle,rgba(217,154,51,.22),transparent 70%);pointer-events:none;
-}
+} */
 .signup-primary h3{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.2vw,40px);line-height:1.12;color:#f3f1e9;margin-bottom:12px}
 .signup-primary p{font-size:15px;color:rgba(240,240,232,.75);max-width:58ch}
 .sp-cta{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:12px;justify-self:center}
@@ -709,7 +710,7 @@ footer{background:var(--green-dark);color:rgba(240,240,232,.65);padding:56px 0 4
 .coord-name{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--green-dark);line-height:1.2;margin-top:2px}
 .coord-role{font-size:12.5px;color:var(--ink-soft);line-height:1.55;flex-grow:1}
 .btn-li{ /* LinkedIn's official button blue, in the site's pill shape */
-  display:inline-flex;align-items:center;gap:8px;
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;width:100%;
   background:#0a66c2;color:#fff;font-weight:600;font-size:13px;
   padding:9px 19px;border-radius:999px;transition:background .2s,transform .2s;
 }
