@@ -41,9 +41,9 @@
 <meta name="twitter:image" content="https://youth.schillerinstitute.com/assets/og-card.jpg">
 
 <!-- Icons -->
-<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon-16.png">
-<link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon.ico">
+<!-- <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon.ico"> -->
+<!-- <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon.icon"> -->
 <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
 
 <!-- Performance -->
@@ -564,9 +564,12 @@
         <div class="eir-media">
           <!-- two-click GDPR facade — the poster is local (assets/eir-ad-poster.svg; swap that
                file for a real still when one arrives). The film loads from Google Drive only
-               after a click; data-embed-src marks the facade as a Drive embed for main.js. -->
-          <div class="video-embed yt-facade" data-embed-src="https://drive.google.com/file/d/1fHPjg765Eo77FvM3Eq8rm-nlFVxRMref/preview" data-yt-title="Executive Intelligence Review — kortfilm" role="button" tabindex="0" aria-label="Afspil kortfilmen om Executive Intelligence Review. Videoen indlæses fra Google Drive.">
-            <img src="../../assets/eir-ad-poster.svg" alt="" width="640" height="360" loading="lazy" decoding="async">
+               after a click; data-embed-src marks the facade as a Drive embed for main.v2.js.
+               The film is 4:3 (962×720) — the inline aspect-ratio matches it so the Drive
+               player fills the frame without pillarbox bars; main.v2.js copies the ratio to
+               the injected iframe wrapper. -->
+          <div class="video-embed yt-facade" style="aspect-ratio:962/720" data-embed-src="https://drive.google.com/file/d/1fHPjg765Eo77FvM3Eq8rm-nlFVxRMref/preview" data-yt-title="Executive Intelligence Review — kortfilm" role="button" tabindex="0" aria-label="Afspil kortfilmen om Executive Intelligence Review. Videoen indlæses fra Google Drive.">
+            <img src="../../assets/eir-ad-poster.svg" alt="" width="480" height="360" loading="lazy" decoding="async">
             <span class="yt-play" aria-hidden="true"><i>▶</i></span>
             <span class="yt-consent">▶ Klik for at afspille — videoen indlæses fra Google Drive (Google). <a href="../../privacy.html">Privatliv</a></span>
           </div>

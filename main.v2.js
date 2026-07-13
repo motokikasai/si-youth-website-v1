@@ -283,6 +283,9 @@ function loadYt(facade){
   const title = facade.dataset.ytTitle || t("js_yt_title", "YouTube video");
   const wrap = document.createElement("div");
   wrap.className = "video-embed";
+  // non-16:9 sources (e.g. the 4:3 EIR film) declare their ratio inline on the
+  // facade — keep it on the wrapper so the player fills the frame without bars
+  if(facade.style.aspectRatio) wrap.style.aspectRatio = facade.style.aspectRatio;
   const iframe = document.createElement("iframe");
   iframe.src = provider === "drive"
     ? facade.dataset.embedSrc // Google Drive player URL (…/preview), stated in the markup
