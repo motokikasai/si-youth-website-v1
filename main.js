@@ -1,13 +1,13 @@
 /* ============ i18n ============
  * Pages live at /<lang>/index.html; each one inlines its dictionary as
- * window.I18N (built from the js_* keys of i18n/<lang>.json — see build.js).
- * t() falls back to English so the script still works standalone. */
+ * window.I18N (built from the js_ and v2js_ keys of i18n/<lang>.json —
+ * see build.js). t() falls back to English so the script still works
+ * standalone. */
 const I18N = window.I18N || {};
 const t = (key, fallback) => (I18N[key] !== undefined ? I18N[key] : fallback);
 
-/* Pages live at /<lang>/ (one level deep) or /v2/<lang>/ (two levels, preview build).
- * Resolve shared root files relative to this script's own src ("../main.js" or
- * "../../main.js") so runtime-injected media works at either depth. */
+/* Resolve shared root files relative to this script's own src ("../main.js")
+ * so runtime-injected media works regardless of page depth. */
 const ASSET_ROOT = (() => {
   const s = document.querySelector('script[src$="main.js"]');
   return s ? s.getAttribute("src").replace(/main\.js$/, "") : "../";
@@ -15,36 +15,62 @@ const ASSET_ROOT = (() => {
 
 /* ============ Featured projects: map pins + modal content ============
  * Map pin positions: edit the PIN coordinates in the PROJECTS
- * object near the bottom of this file (values are % of map image).
- * Pin x/y are % of the map image — tune freely. */
+ * object (values are % of the map frame — image + caption strip).
+ * Pin x/y are % — tune freely.
+ * `tab`   — which region panel the modal's "Explore" button opens;
+ *           omit it and the button is hidden (pin has no panel).
+ * `media` — { type:"video", id, thumb } YouTube facade (two-click GDPR)
+ *           { type:"image", src, fit? } still image; fit:"contain" for
+ *           tall maps that must not be cropped. */
 const PROJECTS = {
   mideast: {
-    x: 17.5, y: 54.3, color: "#d99a33",
+    x: 17.5, y: 54.3, color: "#d99a33", tab: "mideast",
     region: t("js_mideast_region", "Middle East"),
     title: t("js_mideast_title", "The Oasis Plan"),
     text: t("js_mideast_text", "LaRouche's fifty-year development plan for Palestine and Israel: nuclear-powered desalination, new water, transport and power infrastructure — peace built on physical development."),
     media: { type: "video", id: "VNoinK0TY7c", thumb: ASSET_ROOT + "assets/yt-thumb-oasis.jpg" }
   },
   africa: {
-    x: 14.5, y: 65, color: "#2c8b8b",
+    x: 14.5, y: 65, color: "#2c8b8b", tab: "africa",
     region: t("js_africa_region", "Africa"),
     title: t("js_africa_title", "Transaqua"),
     text: t("js_africa_text", "Water transfer from the Congo River basin to refill Lake Chad — a 2,400 km navigable canal benefiting some 40 million people across 12 nations, with hydropower, irrigation, and inland navigation."),
-    media: { type: "video", id: "VNoinK0TY7c", thumb: ASSET_ROOT + "assets/yt-thumb-oasis.jpg" } // demo ID
+    media: { type: "video", id: "LPb9rSLsjoI", thumb: ASSET_ROOT + "assets/yt-thumb-transaqua.jpg" }
   },
   samerica: {
-    x: 85.4, y: 65.2, color: "#c05b3f",
+    x: 85.4, y: 65.2, color: "#c05b3f", tab: "samerica",
     region: t("js_samerica_region", "South America"),
     title: t("js_samerica_title", "Chancay Port & Bioceanic Corridor"),
     text: t("js_samerica_text", "The deepest-water port in South America joined to a Pacific–Atlantic rail corridor across Peru and Brazil — 8,000+ direct jobs and a gateway connecting the continent to the World Land-Bridge. (Draft selection — final featured project pending.)"),
-    media: { type: "video", id: "VNoinK0TY7c", thumb: ASSET_ROOT + "assets/yt-thumb-oasis.jpg" } // demo ID
+    media: { type: "image", src: ASSET_ROOT + "assets/chancay-port.jpg" }
   },
   bronx: {
-    x: 85.2, y: 43.8, color: "#2e6b4f",
+    x: 85.2, y: 43.8, color: "#2e6b4f", tab: "bronx",
     region: t("js_bronx_region", "The Bronx · New York"),
     title: t("js_bronx_title", "Development Begins at Home"),
     text: t("js_bronx_text", "The youth movement's local organizing hub — the featured Bronx development project will be announced. This marker links the neighborhood to the world."),
-    media: { type: "video", id: "VNoinK0TY7c", thumb: ASSET_ROOT + "assets/yt-thumb-oasis.jpg" } // demo ID
+    media: { type: "video", id: "P_vodhzeMRw", thumb: ASSET_ROOT + "assets/yt-thumb-bronx.jpg" }
+  },
+  bering: {
+    x: 59.2, y: 29.2, color: "#e0862c",
+    region: t("v2js_bering_region", "North America ↔ Eurasia"),
+    title: t("v2js_bering_title", "Bering Strait Tunnel"),
+    text: t("v2js_bering_text", "A 53-mile underwater Bering Strait Tunnel would connect North America and Eurasia by rail, joining the USA to the BRI."),
+    media: { type: "image", src: ASSET_ROOT + "assets/bering-strait-tunnel.jpg" }
+  },
+  nawapa: {
+    x: 75.6, y: 49, color: "#2f7fa8",
+    region: t("v2js_nawapa_region", "North America"),
+    title: t("v2js_nawapa_title", "NAWAPA"),
+    text: t("v2js_nawapa_text", "Continental water management: doubles irrigated land in the US Southwest; 52 GW of new nuclear plants."),
+    media: { type: "image", src: ASSET_ROOT + "assets/nawapa-map.jpg", fit: "contain" }
+  },
+  bioceanic: {
+    x: 90, y: 65.4, color: "#c9822e", tab: "samerica",
+    region: t("v2js_bioceanic_region", "South America"),
+    title: t("v2js_bioceanic_title", "Bioceanic Corridor"),
+    text: t("v2js_bioceanic_text", "Railway linking Peru's Pacific coast to the Atlantic coast of Brazil — magnifying the impact of Peru's Chancay Port, the deepest-water port in South America: 8,000+ direct jobs, $4.5 billion in revenue, and Shanghai-to-Chancay shipping times cut by up to 25%."),
+    media: { type: "image", src: ASSET_ROOT + "assets/chancay-port.jpg" }
   }
 };
 
@@ -77,9 +103,14 @@ function openModal(key){
   const media = document.getElementById("modalMedia");
   if(p.media.type === "video"){
     media.innerHTML = ytFacadeHTML(p.media.id, p.title, p.media.thumb);
+  } else if(p.media.type === "image"){
+    const fit = p.media.fit === "contain" ? ' style="object-fit:contain;background:#ccc"' : ""; // #ccc = the NAWAPA map's own background
+    media.innerHTML = `<img src="${p.media.src}" alt="" loading="lazy" decoding="async"${fit}>`;
   } else {
     media.innerHTML = `<div class="ph"><span class="ph-ar">16:9</span><span class="ph-ico">🎬</span><span class="ph-label">${p.media.label}</span><span class="ph-note">${p.media.note}</span></div>`;
   }
+  // pins without a region panel (Bering, NAWAPA) have nowhere to "explore"
+  document.getElementById("modalGo").style.display = p.tab ? "" : "none";
   overlay.classList.add("open");
   document.body.style.overflow = "hidden";
   document.getElementById("modalClose").focus();
@@ -95,10 +126,10 @@ document.getElementById("modalClose").addEventListener("click", closeModal);
 overlay.addEventListener("click", e => { if(e.target === overlay) closeModal(); });
 document.addEventListener("keydown", e => { if(e.key === "Escape" && overlay.classList.contains("open")) closeModal(); });
 document.getElementById("modalGo").addEventListener("click", () => {
-  const key = currentKey;
-  if(!key) return;
+  const p = PROJECTS[currentKey];
+  if(!p || !p.tab) return;
   closeModal();
-  activateTab(key);
+  activateTab(p.tab);
   document.getElementById("tabs").scrollIntoView({behavior:"smooth", block:"start"});
 });
 
@@ -246,6 +277,9 @@ function loadYt(facade){
   const title = facade.dataset.ytTitle || t("js_yt_title", "YouTube video");
   const wrap = document.createElement("div");
   wrap.className = "video-embed";
+  // non-16:9 sources (e.g. the 4:3 EIR film) declare their ratio inline on the
+  // facade — keep it on the wrapper so the player fills the frame without bars
+  if(facade.style.aspectRatio) wrap.style.aspectRatio = facade.style.aspectRatio;
   const iframe = document.createElement("iframe");
   iframe.src = provider === "drive"
     ? facade.dataset.embedSrc // Google Drive player URL (…/preview), stated in the markup
