@@ -1,8 +1,7 @@
 /* ============ i18n ============
  * Pages live at /<lang>/index.html; each one inlines its dictionary as
- * window.I18N (built from the js_ and v2js_ keys of i18n/<lang>.json —
- * see build.js). t() falls back to English so the script still works
- * standalone. */
+ * window.I18N (built from the js_ keys of i18n/<lang>.json — see build.js).
+ * t() falls back to English so the script still works standalone. */
 const I18N = window.I18N || {};
 const t = (key, fallback) => (I18N[key] !== undefined ? I18N[key] : fallback);
 
@@ -53,23 +52,23 @@ const PROJECTS = {
   },
   bering: {
     x: 59.2, y: 29.2, color: "#e0862c",
-    region: t("v2js_bering_region", "North America ↔ Eurasia"),
-    title: t("v2js_bering_title", "Bering Strait Tunnel"),
-    text: t("v2js_bering_text", "A 53-mile underwater Bering Strait Tunnel would connect North America and Eurasia by rail, joining the USA to the BRI."),
+    region: t("js_bering_region", "North America ↔ Eurasia"),
+    title: t("js_bering_title", "Bering Strait Tunnel"),
+    text: t("js_bering_text", "A 53-mile underwater Bering Strait Tunnel would connect North America and Eurasia by rail, joining the USA to the BRI."),
     media: { type: "image", src: ASSET_ROOT + "assets/bering-strait-tunnel.jpg" }
   },
   nawapa: {
     x: 75.6, y: 49, color: "#2f7fa8",
-    region: t("v2js_nawapa_region", "North America"),
-    title: t("v2js_nawapa_title", "NAWAPA"),
-    text: t("v2js_nawapa_text", "Continental water management: doubles irrigated land in the US Southwest; 52 GW of new nuclear plants."),
+    region: t("js_nawapa_region", "North America"),
+    title: t("js_nawapa_title", "NAWAPA"),
+    text: t("js_nawapa_text", "Continental water management: doubles irrigated land in the US Southwest; 52 GW of new nuclear plants."),
     media: { type: "image", src: ASSET_ROOT + "assets/nawapa-map.jpg", fit: "contain" }
   },
   bioceanic: {
     x: 90, y: 65.4, color: "#c9822e", tab: "samerica",
-    region: t("v2js_bioceanic_region", "South America"),
-    title: t("v2js_bioceanic_title", "Bioceanic Corridor"),
-    text: t("v2js_bioceanic_text", "Railway linking Peru's Pacific coast to the Atlantic coast of Brazil — magnifying the impact of Peru's Chancay Port, the deepest-water port in South America: 8,000+ direct jobs, $4.5 billion in revenue, and Shanghai-to-Chancay shipping times cut by up to 25%."),
+    region: t("js_bioceanic_region", "South America"),
+    title: t("js_bioceanic_title", "Bioceanic Corridor"),
+    text: t("js_bioceanic_text", "Railway linking Peru's Pacific coast to the Atlantic coast of Brazil — magnifying the impact of Peru's Chancay Port, the deepest-water port in South America: 8,000+ direct jobs, $4.5 billion in revenue, and Shanghai-to-Chancay shipping times cut by up to 25%."),
     media: { type: "image", src: ASSET_ROOT + "assets/chancay-port.jpg" }
   }
 };
