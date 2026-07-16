@@ -11,58 +11,165 @@
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* TEMPORARY — placeholder highlighting.
+   AMBER <span class="fake">   = fake or unknown data that must be replaced/decided before launch.
+   BLUE  <span class="verify"> = real data taken from the organization's own published pages
+                                 (schillerinstitute.com/de/impressum-2/) — confirm it applies
+                                 to this youth site before launch.
+   Once everything is confirmed, delete this <style> block and remove the
+   class="fake"/class="verify" attributes (the text itself stays). */
+.fake{background:#ffd54f;color:#4a3200;padding:0 .3em;border-radius:4px;
+    outline:2px dashed #c77800;outline-offset:1px;
+    box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.verify{background:#bfdcff;color:#0b2e59;padding:0 .3em;border-radius:4px;
+    outline:2px dashed #1565c0;outline-offset:1px;
+    box-decoration-break:clone;-webkit-box-decoration-break:clone}
+</style>
 </head>
 <body>
 <main class="legal">
   <a class="back" href="index.html">← Back to the Youth Movement site</a>
   <h1>Privacy Policy</h1>
-  <p class="tbd-block">⬡ DRAFT SCAFFOLD — this page lists what the site actually does with visitor data;
-  the organization's legal counsel should review and finalize the wording (and add controller
-  contact details) before launch.</p>
 
-  <h2>Who we are</h2>
-  <p class="tbd-block">⬡ Placeholder — legal name and contact address of the data controller
-  (the organization operating this website).</p>
+  <p>We take the protection of your personal data seriously. This policy explains what
+  data is processed when you visit this website, why, and what rights you have. It is
+  written to comply with the EU General Data Protection Regulation (GDPR) and applicable
+  national data protection law.</p>
 
-  <h2>What this website does</h2>
+  <h2>1. Controller</h2>
+  <p>The controller responsible for data processing on this website is:</p>
+  <p>
+    <span class="verify">Schiller-Institut, Vereinigung für Staatskunst e.&thinsp;V.</span><br>
+    <span class="verify">Postfach 140163</span><br>
+    <span class="verify">65208 Wiesbaden, Germany</span><br>
+    Phone: <span class="verify">+49&nbsp;(0)611&nbsp;2052065</span><br>
+    Email: <a href="mailto:datenschutz@schillerinstitute.com"><span class="verify">datenschutz@schillerinstitute.com</span></a>
+  </p>
+  <p><span class="fake">Confirm that the controller for this youth site is the German
+  Schiller-Institut e.V. and not the U.S. entity (The Schiller Institute, PO Box 20244,
+  Washington, DC 20041, schiller@schillerinstitute.org) — the answer changes the whole
+  policy's framing. If the organization has appointed a data protection officer, add
+  their name and contact details here; otherwise delete this sentence.</span></p>
+
+  <h2>2. The short version</h2>
   <ul>
-    <li><b>No cookies, no tracking.</b> This site sets no cookies and uses no analytics or advertising services.</li>
-    <li><b>Self-hosted fonts and images.</b> All fonts and images are served from this domain; visiting the site sends no requests to third parties.</li>
-    <li><b>Server logs.</b> Our hosting provider may log IP addresses for security and operation of the service (legal basis: legitimate interest). <span class="tbd-block" style="display:inline-block">⬡ name the hosting provider here</span></li>
+    <li><b>No cookies, no tracking.</b> This site sets no cookies and uses no analytics,
+      advertising, or social-media tracking services.</li>
+    <li><b>Self-hosted assets.</b> All fonts, stylesheets, scripts, and images are served
+      from this domain. Simply visiting the site sends no requests to third parties.</li>
+    <li><b>Third parties only on your action.</b> Data is sent to a third party only when
+      you actively click something: playing an embedded video, opening the external
+      sign-up page, or joining a WhatsApp group.</li>
   </ul>
 
-  <h2>Embedded videos (YouTube and Google Drive)</h2>
-  <p>Videos on this site are embedded in privacy-enhanced mode (youtube-nocookie.com) and are
-  <b>not loaded until you click them</b>. When you click a video, your browser connects to YouTube
-  (Google LLC) and Google may process your IP address and set cookies under its own
-  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a>.
-  If you do not click, no data is sent to Google.</p>
-  <p>The short film about the <em>Executive Intelligence Review</em> in the sign-up section is
-  embedded from Google Drive (Google LLC) under the same two-click rule: nothing is loaded from
-  Google Drive until you click that video.</p>
-  <p>When you click a video for the first time, we remember that choice in your browser's local
-  storage (one entry per provider, <code>yt-embed-consent</code> and
-  <code>drive-embed-consent</code>, never transmitted to us or anyone else) so that further
-  videos play without repeating the notice. You can withdraw this consent at any
-  time by clearing this site's data in your browser settings.</p>
+  <h2>3. Hosting and server log files</h2>
+  <p>This website is hosted by
+  <span class="fake">Example Hosting Ltd., 1 Sample Street, 10000 Sampletown, Country</span>
+  (“the hosting provider”). When you access the site, the hosting provider automatically
+  processes the data that your browser transmits, and may record it in server log files:
+  IP address, date and time of the request, requested URL, referrer URL, browser type and
+  version, and operating system.</p>
+  <p>This data is technically necessary to deliver the website to you and to ensure the
+  stability and security of the service (e.g., defending against abuse and attacks). The
+  legal basis is our legitimate interest in the secure and reliable operation of this
+  website (Art. 6 (1) (f) GDPR). Log data is not merged with other data sources and is
+  deleted after <span class="fake">14 days — confirm the hosting provider's actual log
+  retention period</span>. We have concluded a data processing agreement (Art. 28 GDPR)
+  with the hosting provider.</p>
 
-  <h2>Sign-up form</h2>
-  <p>If you submit your email address to join the Youth Movement, we store it and use it only to
-  contact you about the movement (legal basis: your consent, which you can withdraw at any time).</p>
-  <p class="tbd-block">⬡ Placeholder — name the service/backend that will receive form submissions
-  once the form is wired up, and the retention period.</p>
+  <h2>4. Embedded videos (YouTube and Google Drive) — two-click protection</h2>
+  <p>Videos on this site are <b>not loaded until you click them</b>. Until then, you only
+  see a preview image served from this domain, and no data is sent to any third party.</p>
+  <p>When you click a video, your browser connects to YouTube in privacy-enhanced mode
+  (youtube-nocookie.com) or, for the <em>Executive Intelligence Review</em> short film, to
+  Google Drive. Both services are provided by Google Ireland Limited, Gordon House, Barrow
+  Street, Dublin 4, Ireland (“Google”). Google then processes your IP address and device
+  information, and may set cookies or similar identifiers, under its own
+  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy
+  policy</a>. This may involve transfers of your data to Google LLC in the United States;
+  Google LLC is certified under the EU-U.S. Data Privacy Framework, which the European
+  Commission has recognized as providing an adequate level of protection.</p>
+  <p>The legal basis for loading these videos is your consent (Art. 6 (1) (a) GDPR),
+  which you give by clicking the video after reading the notice shown on it. Your choice
+  is remembered per provider in your browser's local storage (entries
+  <code>yt-embed-consent</code> and <code>drive-embed-consent</code>), so that further
+  videos from the same provider play without repeating the notice. These entries are not
+  cookies, contain no identifiers, and are never transmitted to us or anyone else. You can
+  withdraw your consent at any time with effect for the future by deleting this site's
+  data in your browser settings — videos will then show the consent notice again.</p>
 
-  <h2>WhatsApp group</h2>
-  <p>Joining our WhatsApp group is voluntary. Note that WhatsApp (Meta Platforms) will process your
-  phone number and profile information, and other group members will see it, under WhatsApp's own
-  <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">privacy policy</a>.</p>
+  <h2>5. Signing up to the Youth Movement</h2>
+  <p>This website itself contains no sign-up form. The “sign up” button takes you to a
+  separate sign-up page at <code>schillerinstitute.nationbuilder.com</code>, which is
+  operated on the NationBuilder platform (3DNA Corp., Los Angeles, USA). Any data you
+  enter there (such as your name, email address, and phone number) is processed on that
+  platform under its own <a href="https://nationbuilder.com/privacy"
+  target="_blank" rel="noopener">privacy policy</a>, and by us as controller to contact
+  you about the Youth Movement and its activities.</p>
+  <p>The legal basis is your consent (Art. 6 (1) (a) GDPR). You can withdraw your consent
+  at any time, for example by emailing
+  <a href="mailto:datenschutz@schillerinstitute.com"><span class="verify">datenschutz@schillerinstitute.com</span></a>;
+  the lawfulness of processing before the withdrawal remains unaffected. We store your
+  sign-up data until you withdraw your consent or object, at the latest
+  <span class="fake">24 months after the last contact — confirm the actual retention
+  rule</span>.</p>
 
-  <h2>Your rights</h2>
-  <p>Under the GDPR you have the right to access, rectify, erase, and port your personal data, to
-  restrict or object to its processing, and to lodge a complaint with a supervisory authority.
-  Contact us at <span class="tbd-block" style="display:inline-block">⬡ contact email placeholder</span>.</p>
+  <h2>6. Contacting us</h2>
+  <p>If you contact us by email or phone, we process the data you provide (your contact
+  details and the content of your message) in order to handle your inquiry. The legal
+  basis is our legitimate interest in answering your inquiry (Art. 6 (1) (f) GDPR) or,
+  where your inquiry is aimed at joining or a similar arrangement, Art. 6 (1) (b) GDPR.
+  We delete this correspondence once your inquiry is fully dealt with, unless statutory
+  retention obligations require longer storage.</p>
 
-  <p><small>Last updated: <span class="tbd-block" style="display:inline-block">⬡ date placeholder</span></small></p>
+  <h2>7. WhatsApp groups</h2>
+  <p>Joining one of our WhatsApp groups is voluntary and happens on your initiative by
+  scanning a QR code or following an invitation link. WhatsApp (WhatsApp Ireland Limited /
+  Meta Platforms) will then process your phone number and profile information under its
+  own <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank"
+  rel="noopener">privacy policy</a>, and other group members will be able to see your
+  phone number, profile name, and messages. If you prefer not to share this data with
+  WhatsApp, please use email or phone to contact us instead.</p>
+
+  <h2>8. External links</h2>
+  <p>This site links to external websites (for example the <em>Executive Intelligence
+  Review</em> subscription page and coordinators' LinkedIn profiles). Clicking such a link
+  takes you to a service outside our control; the respective operator's privacy policy
+  applies there. No data is transferred to these services merely by visiting our site.</p>
+
+  <h2>9. Your rights</h2>
+  <p>With regard to your personal data, you have the right to:</p>
+  <ul>
+    <li>access the data we hold about you (Art. 15 GDPR),</li>
+    <li>have inaccurate data rectified (Art. 16 GDPR),</li>
+    <li>have your data erased (Art. 17 GDPR),</li>
+    <li>restrict its processing (Art. 18 GDPR),</li>
+    <li>receive your data in a portable format (Art. 20 GDPR),</li>
+    <li>object to processing based on legitimate interest (Art. 21 GDPR), and</li>
+    <li>withdraw any consent you have given, at any time with effect for the future
+      (Art. 7 (3) GDPR).</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at
+  <a href="mailto:datenschutz@schillerinstitute.com"><span class="verify">datenschutz@schillerinstitute.com</span></a>.
+  You also have the right to lodge a complaint with a data protection supervisory
+  authority (Art. 77 GDPR), in particular in the EU member state of your habitual
+  residence, your place of work, or the place of the alleged infringement. The authority
+  responsible for us is
+  <span class="verify">the Hessian Commissioner for Data Protection and Freedom of
+  Information (HBDI), Gustav-Stresemann-Ring 1, 65189 Wiesbaden, Germany</span>
+  <span class="fake">— correct if the controller is not the Wiesbaden e.V.</span>.</p>
+
+  <h2>10. No automated decision-making</h2>
+  <p>We do not use your data for automated decision-making or profiling. You are neither
+  legally nor contractually obliged to provide personal data to use this website; without
+  it, you simply cannot be contacted or signed up.</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>We may update this privacy policy when the website or legal requirements change. The
+  current version is always available on this page.</p>
+
+  <p><small>Last updated: 16 July 2026 — set to the launch date</small></p>
 </main>
 </body>
 </html>
